@@ -1,0 +1,182 @@
+<template>
+    <div class="page order-page" data-name="order">
+        <div class="navbar">
+            <div class="navbar-inner sliding">
+                <div class="left">
+                    <a href="#" class="link back">
+                        <img src="img/back-icon-blue.png" />
+                    </a>
+                </div>
+                <div class="title resources-title-navbar">Servicio disponible</div>
+            </div>
+        </div>
+
+        <div class="page-content">
+            <div class="summary-order">
+                <h1 id="order-desc"></h1>
+                <h3 id="order-date"></h3>
+                <h3 id="order-status"></h3>
+                <!-- <h2 id="order-cost"></h2> -->
+            </div>
+            <div class="block">
+                <p style="text-align: center;">
+                   Luego de esta aplicación, pasarán algunos segundos para que nuestra plataforma evalue a quien le será asignado. Por favor esté pendiente de las notificaciones
+                </p>
+            </div>
+            <div class="block">
+                <div class="row">
+                    <a class="button button-round button-outline col link back ker-button-outline">Atrás</a>
+                    <a class="button button-round button-fill blue-ker col" @click="apply">Aplicar</a>
+                </div>
+            </div>
+            <!-- <div class="block">
+                <p class="segmented segmented-round">
+                    <button class="button button-round button-outline">Cancelar</button>
+                    <button class="button button-round button-outline" style="display: none;" id="viewCollaborator">Ver Afiliado</button>
+
+                    <button class="button button-round button-outline">Soporte</button>
+                </p>
+            </div>
+            <div class="block block-strong" id="timeline">
+               
+            </div> -->
+        </div>
+    </div>
+</template>
+<script>
+    return {
+        on: {
+            pageInit: function (e, page) {
+                var self = this;
+                var $$ = self.$$;
+
+                var orderId = this.$route.params.orderId;
+                var clientId = this.$route.params.clientId;
+
+                console.log("on page init 1");
+                self.getOrderHistory(clientId, orderId);
+            }
+        },
+        methods: {
+            getOrderHistory: function (clientId, orderId) {
+                var self = this;
+                var $$ = self.$$;
+
+                self.$app.dialog.preloader('Un momento por favor...');
+
+
+                app.request({
+                    url: Util.mapPath('/api/availableorders?clientId=' + clientId + '&orderId=' + orderId),
+                    method: 'GET',
+                    crossDomain: true,
+                    contentType: 'application/json',
+                    dataType: 'json',
+                    processData: false,
+                    success: function (data, status, xhr) {
+
+                        if(data.Status == "Unassigned"){
+                            $$("#order-desc").text(data.Description);
+                            $$("#order-date").text(Util.formatDate(data.DeliveryDate));
+                            $$("#order-status").text(data.ReadableStatus);
+                            $$("#order-cost").text(Util.formatCurrency(data.Total));
+                        } else {
+                            console.log("lo del pedido");
+                                var toastWithCustomButton = app.toast.create({
+                                    text: 'El pedido ya no se encuentra disponible',
+                                    closeButton: true,
+                                    closeButtonText: 'Cerrar',
+                                    closeButtonColor: 'red',
+                                    closeTimeout: 3000,
+                                });
+
+                                toastWithCustomButton.open();
+
+                                app.router.navigate('/main/', {});
+                        }
+
+                        self.$app.dialog.close();
+                    },
+                    error: function (xhr, status) {
+
+                        console.log("Ajax Error");
+                        console.log(status);
+                        console.log(xhr);
+                    }
+                });
+            },
+            apply: function () {
+                var self = this;
+                var $$ = self.$$;
+
+                self.$app.dialog.preloader('Aplicando al servicio...');
+
+                var orderId = this.$route.params.orderId;
+                var clientId = this.$route.params.clientId;
+
+                let wrapper = {
+                    OrderId: orderId,
+                    InternalClientId: clientId,
+                    CollaboratorId: internalId,
+                    CollaborationName: collaboratorName
+                };
+
+                app.request({
+                    url: Util.mapPath('/api/takeorder'),
+                    method: 'POST',
+                    crossDomain: true,
+                    contentType: 'application/json',
+                    dataType: 'json',
+                    processData: false,
+                    data: JSON.stringify(wrapper),
+                    success: function (data, status, xhr) {
+
+                        self.$app.dialog.close();
+
+                        if (status == 200) {
+                            if (data.Status == true) {
+                                var toastWithCustomButton = app.toast.create({
+                                    text: 'Tu aplicación ha sido enviada. Te confirmaremos si se te asigna el pedido',
+                                    closeButton: true,
+                                    closeButtonText: 'Cerrar',
+                                    closeButtonColor: 'green',
+                                    closeTimeout: 3000,
+                                });
+
+                                toastWithCustomButton.open();
+
+                                app.router.navigate('/main/', {
+                                  
+                                });
+                            } else {
+                                var toastWithCustomButton = app.toast.create({
+                                    text: data.Message,
+                                    closeButton: true,
+                                    closeButtonText: 'Cerrar',
+                                    closeButtonColor: 'red',
+                                    closeTimeout: 3000,
+                                });
+
+                                toastWithCustomButton.open();
+
+                                 app.router.navigate('/main/', {});
+                            }
+                        }
+                    },
+                    error: function (xhr, status) {
+                        self.$app.dialog.close();
+
+                        var toastWithCustomButton = app.toast.create({
+                            text: 'Error de conexión. Por favor intente nuevamente',
+                            closeButton: true,
+                            closeButtonText: 'Cerrar',
+                            closeButtonColor: 'red',
+                            closeTimeout: 3000,
+                        });
+
+                        toastWithCustomButton.open();
+                    }
+                });
+            }
+        }
+    }
+</script>

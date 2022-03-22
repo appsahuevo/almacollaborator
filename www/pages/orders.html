@@ -1,0 +1,61 @@
+<template>
+    <div class="page orders-page" data-name="orders">
+        <div class="navbar">
+            <div class="navbar-inner sliding">
+                <div class="left">
+                    <a href="#" class="link back">
+                        <img src="img/back-icon-blue.png" />
+                    </a>
+                </div>
+                <div class="title resources-title-navbar">Servicios en curso</div>
+            </div>
+        </div>
+
+        <div class="page-content">
+            <div class="list media-list" id="orders-list">
+
+            </div>
+        </div>
+    </div>
+</template>
+<script>
+    return {
+        on: {
+            pageInit: function (e, page) {
+                var self = this;
+                var $$ = self.$$;
+
+                self.getOrders();
+            }
+        },
+        methods: {
+            getOrders: function () {
+                var self = this;
+                var $$ = self.$$;
+                self.$app.dialog.preloader('Un momento por favor...');
+
+                app.request({
+                    url: Util.mapPath('/api/order?clientId=' + internalId),
+                    method: 'GET',
+                    crossDomain: true,
+                    contentType: 'application/json',
+                    dataType: 'json',
+                    processData: false,
+                    success: function (data, status, xhr) {
+
+                        Util.renderTemplate($$, '#orders-list-template', '#orders-list', data);
+
+                        self.$app.dialog.close();
+
+                    },
+                    error: function (xhr, status) {
+
+                        console.log("Ajax Error");
+                        console.log(status);
+                        console.log(xhr);
+                    }
+                });
+            }
+        }
+    }
+</script>

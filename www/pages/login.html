@@ -1,0 +1,169 @@
+<template>
+  <div class="page login-page">
+
+    <div class="page-content login-screen-content">
+      <div style="text-align: center">
+        <img src="img/logo-login.png" />
+      </div>
+      <div class="login-screen-title ker-title-login">Inicia sesión</div>
+      <form>
+        <div class="list">
+          <ul>
+            <li class="item-content item-input item-input-with-value">
+              <div class="item-inner">
+                <div class="item-title item-label"></div>
+                <div class="item-input-wrap">
+                  <input type="email" placeholder="Ingresa tu código" id="login-username" class="input-with-value ker-input">
+                  <span class="input-clear-button"></span>
+                </div>
+              </div>
+            </li>
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label"></div>
+                <div class="item-input-wrap">
+                  <input type="password" placeholder="Ingresa tu contraseña" id="login-password" class="ker-input">
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="block">
+
+          <div class="row">
+            <a class="button button-round button-outline col link back ker-button-outline">Cancelar</a>
+            <a class="button button-round button-outline col ker-button-fill" id="btn-signup" @click="signIn">Iniciar sesión</a>
+          </div>
+        </div>
+        <!-- <div class="list">
+          <ul>
+            <li>
+              <a href="#" class="item-link list-button" @click="signIn">Iniciar sesión</a>
+            </li>
+          </ul>
+          <div class="block-footer">Some text about login information.
+            <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        </div> -->
+      </form>
+    </div>
+  </div>
+</template>
+<script>
+  return {
+    methods: {
+      signIn: function () {
+
+        var self = this;
+        var $ = self.$;
+        var app = self.$app;
+        var router = self.$router;
+
+        self.$app.dialog.preloader('Un momento por favor...');
+
+        var signinData = {
+          Email: $('input#login-username').val(),
+          Password: $('input#login-password').val()
+        };
+
+        Util.signIn(signinData, function (status, msg, collaborator) {
+
+          if (status) {
+
+            Util.authenticate(signinData.Email, signinData.Password, collaborator.RowKey, function () {
+              self.$app.dialog.close();
+
+              username = signinData.Email;
+              internalId = collaborator.RowKey;
+              collaboratorName = collaborator.FullName;
+
+              localforage.setItem('collaborator', collaborator, function (err) {
+                if (!err) {
+                  app.router.navigate('/main/', {});
+                }
+              });
+
+            });
+
+          } else {
+            self.$app.dialog.close();
+
+            var toastWithCustomButton = app.toast.create({
+              text: msg,
+              closeButton: true,
+              closeButtonText: 'Cerrar',
+              closeButtonColor: 'red',
+              closeTimeout: 3000,
+            });
+
+            toastWithCustomButton.open();
+          }
+        }, function () {
+          self.$app.dialog.close();
+
+          var toastWithCustomButton = app.toast.create({
+            text: 'Error inesperado. Por favor intente nuevamente',
+            closeButton: true,
+            closeButtonText: 'Cerrar',
+            closeButtonColor: 'red',
+            closeTimeout: 3000,
+          });
+
+          toastWithCustomButton.open();
+
+        });
+
+        // app.request({
+        //   url: Util.mapPath('/api/signin'),
+        //   method: 'POST',
+        //   crossDomain: true,
+        //   contentType: 'application/json',
+        //   dataType: 'json',
+        //   processData: false,
+        //   data: JSON.stringify(signinData),
+        //   success: function (data, status, xhr) {
+
+        //     if (status == 200) {
+        //       if (data.Status == true) {
+
+        //         Util.authenticate(signinData.Email, signinData.Password, data.Data, function () {
+        //           self.$app.dialog.close();
+
+        //           username = signinData.Email;
+        //           internalId = data.Data;
+
+        //           Util.initSignalR();
+
+        //           app.router.navigate('/main/', {});
+        //         });
+        //       } else {
+        //         self.$app.dialog.close();
+        //       }
+        //     }
+        //   },
+        //   error: function (xhr, status) {
+        //     self.$app.dialog.close();
+
+        //     var toastWithCustomButton = app.toast.create({
+        //       text: 'Error de conexión. Por favor intente nuevamente',
+        //       closeButton: true,
+        //       closeButtonText: 'Cerrar',
+        //       closeButtonColor: 'red',
+        //       closeTimeout: 3000,
+        //     });
+
+        //     toastWithCustomButton.open();
+        //   }
+        // });
+
+
+
+        // app.dialog.alert('Username: ' + username + '<br>Password: ' + password, function () {
+        //   // app.loginScreen.close();
+        //   // router.back();
+        //   console.log("redirect");
+        //   app.router.navigate('/categories/', {});
+        // })
+      }
+    }
+  }
+</script>

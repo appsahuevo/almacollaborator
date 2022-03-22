@@ -1,0 +1,101 @@
+<template>
+    <div class="page" data-name="clientprofile">
+        <div class="navbar">
+            <div class="navbar-inner sliding">
+                <div class="left">
+                    <a href="#" class="link back">
+                        <img src="img/back-icon-blue.png" />
+
+                    </a>
+                </div>
+                <div class="title resources-title-navbar">Perfil de cliente</div>
+            </div>
+        </div>
+        <div class="page-content" style="background: #fff">
+            <div class="summary-order">
+                <img id="profile-image" src="img/logo_profile.png" />
+
+                <div class="client-profile-username" id="profile-name"></div>
+            </div>
+            <br />
+            <br />
+            <div class="line-separator"></div>
+
+            <div class="skill-actions-md row" style="margin-top: 20px !important;">
+                <div class="col-50 text-aling-right padding-right">
+                    <a href="#" class="link padding-right" id="call">
+                        <img id="profile-call-img" src="img/phone.png" />
+                    </a>
+                    <br />
+                    <span style="padding-right:18px">Llamar</span><br />
+                    <span class="phoneNumber"></span>
+                </div>
+                <div class="col-50 justify-content-left padding-left">
+                    <a href="#" class="external" id="mesagge">
+                        <img id="profile-message-img" src="img/chat.png" />
+                    </a>
+                    <br />
+                    <span style="padding-left:20px">Chat</span><br />
+                    <span class="phoneNumber"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<script>
+    return {
+        on: {
+            pageInit: function (e, page) {
+                var self = this;
+                var $$ = self.$$;
+
+                var clientId = this.$route.params.clientId;
+
+                self.getClientData(clientId);
+            }
+        },
+        methods: {
+            getClientData: function (clientId) {
+                var self = this;
+                var $$ = self.$$;
+                self.$app.dialog.preloader('Un momento por favor...');
+
+                app.request({
+                    url: Util.mapPath('/api/CLient?clientId=' + clientId),
+                    method: 'GET',
+                    crossDomain: true,
+                    contentType: 'application/json',
+                    dataType: 'json',
+                    processData: false,
+                    success: function (data, status, xhr) {
+
+                        $$("#profile-name").text(data.Fullname);
+                        self.$app.dialog.close();
+
+                        $$(".phoneNumber").text(data.CellPhone.replace(/\s/g, ''));
+
+                        let lnk = "https://wa.me/57" + data.CellPhone.replace(/\s/g, '') + "?text=";
+
+                        $$("#mesagge").attr("href", lnk);
+
+                        $$("#call").on("click", function () {
+                            cordova.InAppBrowser.open('tel:' + data.CellPhone.replace(/\s/g, ''), '_system');
+                        });
+                        // $$("#mesagge").on("click", function () {
+                        //     //console.log("+57" + data.PhoneNumber.replace(/\s/g, ''));
+                        //     var uri = 'https://api.whatsapp.com/send?phone=57' + data.CellPhone.replace(/\s/g, '') + '&text=Hola';
+                        //     console.log(uri);
+                        //     cordova.InAppBrowser.open(uri, '_blank', 'location=yes');
+                        // });
+                    },
+                    error: function (xhr, status) {
+
+                        console.log("Ajax Error");
+                        console.log(status);
+                        console.log(xhr);
+                    }
+                });
+            }
+        }
+    };
+</script>

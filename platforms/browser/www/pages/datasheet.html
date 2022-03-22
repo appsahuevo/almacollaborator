@@ -1,0 +1,863 @@
+<template>
+    <div class="page resource-page" data-name="resource">
+        <div class="navbar">
+            <div class="navbar-inner sliding">
+                <div class="left">
+                    <a href="#" class="link back">
+                        <!-- <i class="icon icon-back"></i>
+                        <span class="ios-only">Back</span> -->
+                        <img src="img/back-icon-blue.png" />
+                    </a>
+                </div>
+                <div class="title resources-title-navbar">Ficha técnica</div>
+            </div>
+        </div>
+        <div class="toolbar toolbar-bottom-md">
+            <div class="toolbar-inner">
+                <!-- <a class="link">Left Link</a> -->
+                <div class="title-total">
+                    <span id="total-resource"></span>
+                </div>
+
+                <a class="button button-round button-fill blue-ker" @click="save">Guardar</a>
+            </div>
+        </div>
+        <div class="page-content">
+            <div id="personalInfo">
+                <div class="block-title">Información personal</div>
+                <div class="list no-hairlines-md">
+                    <ul>
+                        <li class="item-content item-input">
+                            <div class="item-inner">
+                                <div class="item-title item-label">Email</div>
+                                <div class="item-input-wrap">
+                                    <input type="email" placeholder="Email" class="" id="Email" />
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item-content item-input">
+                            <div class="item-inner">
+                                <div class="item-title item-label">Nombre completo</div>
+                                <div class="item-input-wrap">
+                                    <input type="text" placeholder="Nombre completo" class="" id="FullName" />
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block-title">Diámetro del cabello</div>
+            <div class="list">
+                <ul class="radio-group" id="Diameter" data-text="diámetro del cabello">
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Grueso</div>
+                            </div>
+                            <input type="radio" id="1-diameter" name="Diameter" value="1" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Delgado</div>
+                            </div>
+                            <input type="radio" id="2-diameter" name="Diameter" value="2" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Fino</div>
+                            </div>
+                            <input type="radio" id="3-diameter" name="Diameter" value="3" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div class="block-title">Densidad del cabello</div>
+            <div class="list">
+                <ul class="radio-group" id="Density" data-text="densidad del cabello">
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Abundante</div>
+                            </div>
+                            <input type="radio" id="1-density" name="Density" value="1" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Media</div>
+                            </div>
+                            <input type="radio" id="2-density" name="Density" value="2" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Escasa</div>
+                            </div>
+                            <input type="radio" id="3-density" name="Density" value="3" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div class="block-title">Textura del cabello</div>
+            <div class="list">
+                <ul class="radio-group" id="Texture" data-text="textura del cabello">
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Lisa</div>
+                            </div>
+                            <input type="radio" id="1-texture" name="Texture" value="1" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Ondulada</div>
+                            </div>
+                            <input type="radio" id="2-texture" name="Texture" value="2" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Crespa</div>
+                            </div>
+                            <input type="radio" id="3-texture" name="Texture" value="3" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div class="block-title">Estado del cuero cabelludo</div>
+            <div class="list">
+                <ul class="radio-group" id="Status" data-text="estado del cuero cabelludo">
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Sano</div>
+                            </div>
+                            <input type="radio" id="1-status" name="Status" value="1" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Dermatitis</div>
+                            </div>
+                            <input type="radio" id="2-status" name="Status" value="2" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Alergias</div>
+                            </div>
+                            <input type="radio" id="3-status" name="Status" value="3" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Graso</div>
+                            </div>
+                            <input type="radio" id="4-status" name="Status" value="4" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Sano y sensible</div>
+                            </div>
+                            <input type="radio" id="5-status" name="Status" value="5" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div class="block-title">En caso de estar tinturado</div>
+            <div class="list">
+                <ul class="radio-group" id="Tincture" data-text="campo en caso de estar tinturado">
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Tintura profesional</div>
+                            </div>
+                            <input type="radio" id="1-tincture" name="Tincture" value="1" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Henna</div>
+                            </div>
+                            <input type="radio" id="2-tincture" name="Tincture" value="2" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Sales metalicas</div>
+                            </div>
+                            <input type="radio" id="3-tincture" name="Tincture" value="3" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Sin tintura</div>
+                            </div>
+                            <input type="radio" id="4-tincture" name="Tincture" value="4" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div class="block-title">En caso de alisados anteriores</div>
+            <div class="list">
+                <ul class="radio-group" id="Beforesmooth" data-text="el campo en caso de alisados anteriores">
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Tioglicolato</div>
+                            </div>
+                            <input type="radio" id="1-beforesmooth" name="Beforesmooth" value="1" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Soda caustica</div>
+                            </div>
+                            <input type="radio" id="2-beforesmooth" name="Beforesmooth" value="2" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Carbonato de calcio (Guanidina)</div>
+                            </div>
+                            <input type="radio" id="3-beforesmooth" name="Beforesmooth" value="3" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Ninguno</div>
+                            </div>
+                            <input type="radio" id="4-beforesmooth" name="Beforesmooth" value="4" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div class="block-title">En caso de alisados progresivos</div>
+            <div class="list">
+                <ul class="radio-group" id="Progresivesmooth" data-text="campo en caso de alisados progresivos">
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Carbosisteina</div>
+                            </div>
+                            <input type="radio" id="1-progresivesmooth" name="Progresivesmooth" value="1" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Formaldehidos</div>
+                            </div>
+                            <input type="radio" id="2-progresivesmooth" name="Progresivesmooth" value="2" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Acidos</div>
+                            </div>
+                            <input type="radio" id="3-progresivesmooth" name="Progresivesmooth" value="3" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Sisteina</div>
+                            </div>
+                            <input type="radio" id="4-progresivesmooth" name="Progresivesmooth" value="4" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Glicolico</div>
+                            </div>
+                            <input type="radio" id="5-progresivesmooth" name="Progresivesmooth" value="5" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Glocilico</div>
+                            </div>
+                            <input type="radio" id="6-progresivesmooth" name="Progresivesmooth" value="6" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Ninguno</div>
+                            </div>
+                            <input type="radio" id="7-progresivesmooth" name="Progresivesmooth" value="7" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div class="block-title">Enfermedades del cuero cabelludo</div>
+            <div class="list">
+                <ul class="checkbox-group" id="Diseases" data-text="campo enfermedades del cuero cabelludo">
+                    <li>
+                        <label class="item-checkbox item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Seborrea</div>
+                            </div>
+                            <input type="checkbox" id="1-diseases" name="Diseases" value="1" />
+                            <i class="icon icon-checkbox"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-checkbox item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Alopecia</div>
+
+                            </div>
+                            <input type="checkbox" id="2-diseases" name="Diseases" value="2" />
+                            <i class="icon icon-checkbox"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-checkbox item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Psoriasis</div>
+
+                            </div>
+                            <input type="checkbox" id="3-diseases" name="Diseases" value="3" />
+                            <i class="icon icon-checkbox"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-checkbox item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Pityriasis</div>
+
+                            </div>
+                            <input type="checkbox" id="4-diseases" name="Diseases" value="4" />
+                            <i class="icon icon-checkbox"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-checkbox item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Pili torti</div>
+
+                            </div>
+                            <input type="checkbox" id="5-diseases" name="Diseases" value="5" />
+                            <i class="icon icon-checkbox"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-checkbox item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Tiña</div>
+
+                            </div>
+                            <input type="checkbox" id="6-diseases" name="Diseases" value="6" />
+                            <i class="icon icon-checkbox"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-checkbox item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Ictiosis</div>
+
+                            </div>
+                            <input type="checkbox" id="7-diseases" name="Diseases" value="7" />
+                            <i class="icon icon-checkbox"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-checkbox item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Dermatitis capilar</div>
+
+                            </div>
+                            <input type="checkbox" id="8-diseases" name="Diseases" value="8" />
+                            <i class="icon icon-checkbox"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-checkbox item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Alergias</div>
+
+                            </div>
+                            <input type="checkbox" id="9-diseases" name="Diseases" value="9" />
+                            <i class="icon icon-checkbox"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-checkbox item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Otro</div>
+
+                            </div>
+                            <input type="checkbox" id="10-diseases" name="Diseases" value="10" />
+                            <i class="icon icon-checkbox"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-checkbox item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Ninguno</div>
+
+                            </div>
+                            <input type="checkbox" id="11-diseases" name="Diseases" value="11" />
+                            <i class="icon icon-checkbox"></i>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+           
+            <div class="block-title">¿Puede realizarse el proceso?</div>
+            <div class="list">
+                <ul class="radio-group" id="Process" data-text="campo ¿Puede realizarse el proceso?">
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Si</div>
+                            </div>
+                            <input type="radio" id="1-process" name="Process" value="1" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">No</div>
+                            </div>
+                            <input type="radio" id="2-process" name="Process" value="2" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                    <li id="whatno" class="item-content item-input" style="display:none" >
+                        <div class="item-inner">
+                            <div class="item-title item-label">¿Por que no?</div>
+                            <div class="item-input-wrap">
+                                <textarea placeholder="Escribe aquí el porque no puede realizar el proceso" class="" id="ProcessComments"></textarea>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="block-title">Producto a utilizar</div>
+            <div class="list">
+                <ul class="radio-group" id="Product" data-text="producto a utilizar">
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Brazil cacau</div>
+                            </div>
+                            <input type="radio" id="1-product" name="Product" value="1" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Plástica dos fios</div>
+                            </div>
+                            <input type="radio" id="2-product" name="Product" value="2" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+           
+            <div class="block-title">Tipo de cabello a tratar</div>
+            <div class="list">
+                <ul class="radio-group" id="Typehear" data-text="tipo de cabello a tratar">
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <!--<div class="item-title">Tipo 1</div>-->
+
+                                <img width="30%" src="img/hear-type1.PNG" />
+                            </div>
+                            <input type="radio" id="1-typehear" name="Typehear" value="1" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <!--<div class="item-title">Tipo 2</div>-->
+                                <img width="30%" src="img/hear-type2.PNG" />
+
+                            </div>
+                            <input type="radio" id="2-typehear" name="Typehear" value="2" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <!--<div class="item-title">Tipo 3</div>-->
+                                <img width="30%" src="img/hear-type3.PNG" />
+
+                            </div>
+                            <input type="radio" id="3-typehear" name="Typehear" value="3" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <!--<div class="item-title">Tipo 4</div>-->
+                                <img width="30%" src="img/hear-type4.PNG" />
+
+                            </div>
+                            <input type="radio" id="4-typehear" name="Typehear" value="4" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div class="block-title">Cantidad de producto a aplicar</div>
+            <div class="list">
+                <ul class="radio-group" id="Productapply" data-text="campo cantidad de producto a aplicar">
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">60ml</div>
+                            </div>
+                            <input type="radio" id="1-productapply" checked="checked" name="Productapply" value="1" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div class="block-title">Cantidad de producto aplicado</div>
+            <div class="list">
+                <ul class="radio-group" id="Productapplied" data-text="campo cantidad de producto aplicado">
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">60ml</div>
+                            </div>
+                            <input type="radio" id="1-productapplied" name="Productapplied" value="1" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">90ml</div>
+                            </div>
+                            <input type="radio" id="2-productapplied" name="Productapplied" value="2" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">120ml</div>
+                            </div>
+                            <input type="radio" id="2-productapplied" name="Productapplied" value="3" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div class="block-title">Línea de cuidado a recomendar</div>
+            <div class="list">
+                <ul class="radio-group" id="Carelinerecom" data-text="campo linea de cuidado a recomendar">
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">CADIVEU</div>
+                            </div>
+                            <input type="radio" id="1-carelinerecom" name="Carelinerecom" value="1" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="item-radio item-content">
+                            <div class="item-inner">
+                                <div class="item-title">WELLA</div>
+                            </div>
+                            <input type="radio" id="2-carelinerecom" name="Carelinerecom" value="2" />
+                            <i class="icon icon-radio"></i>
+                        </label>
+                    </li>                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</template>
+<script>
+    return {
+        on: {
+            pageBeforeIn: function (e, page) {
+
+                var self = this;
+                var $$ = self.$$;
+
+                Util.switchNavbarColor($$, "rgba(0,0,0,0)");
+
+            },
+            pageInit: function (e, page) {
+                var self = this;
+                var $$ = self.$$;
+                
+
+                var clientId = this.$route.params.clientId;
+                var orderId = this.$route.params.orderId;
+                self.orderId = orderId;
+
+                self.IsClient = true;
+
+                $$("#Process").on('change', function () {                    
+                    let val = $$('input[name=Process]:checked').val();
+                                        
+                    if (val == "1") {
+                        
+                        $$("#whatno").hide();
+                    }
+                    else {                        
+                        $$("#whatno").show();
+
+                    }
+                });
+
+                app.request({
+                    url: Util.mapPath('/api/datasheet?ClientId=' + clientId),
+                    method: 'GET',
+                    crossDomain: true,
+                    contentType: 'application/json',
+                    dataType: 'json',
+                    processData: false,
+                    success: function (data, status, xhr) {
+                        console.log(data);
+                        if (status == 200) {
+                            app.dialog.create({
+                                title: "Ficha técnica",
+                                text: "La ficha técnica sera para el cliente o acompañante?",
+                                buttons: [
+                                    {
+                                        text: "Cliente"
+                                    },
+                                    {
+                                        text: "Acompañante"
+                                    }
+                                ],
+                                onClick: function (obj, index) {
+
+                                    if (index == 0) {
+                                        $$("#personalInfo").hide();
+                                    }
+                                    else if (index == 1) {
+                                        self.IsClient = false;
+                                    }
+                                }
+                            }).open();
+
+                            if (data) {
+                                self.loadDataSheet(data);
+                            }
+                        }
+                    },
+                    error: function (xhr, status) {
+
+                        Util.showError('Ocurrio un error intentando cargar la ficha tecnica');
+                    }
+                });
+              
+            }
+        },
+        methods: {
+            loadDataSheet: function (data) {
+                var self = this;
+                var $$ = self.$$;
+                console.log("in");
+                $$('.radio-group').each(function (i, obj) {
+                    var elementId = $$(this).attr("id");
+                    
+                    $$('input[name=' + elementId + '][value="' + data[elementId] + '"]').prop('checked', true);
+                });
+
+                $$('.checkbox-group').each(function (i, obj) {
+                    var elementId = $$(this).attr("id");
+                    
+                    var values = data[elementId].split(",");
+                    
+                    for (var i = 0; i < values.length; i++) {
+                        $$('input[name=' + elementId + '][value="' + values[i] + '"]').prop('checked', true);
+                    }                    
+                });
+
+                $$("#Email").val(data['Email']);
+                $$("#FullName").val(data['FullName']);
+                $$("#ExpositionTime").val(data['ExpositionTime']);
+                $$("#ProcessComments").val(data['ProcessComments']);
+            },
+            save: function () {
+                var self = this;
+                var $$ = self.$$;
+                var clientId = this.$route.params.clientId;
+
+                if (self.validateForm()) {
+                    self.$app.dialog.preloader('Un momento por favor...');
+
+                    //Api send data
+                    var dataSheet = {};
+                    $$('.radio-group').each(function (i, obj) {
+                        var elementId = $$(this).attr("id");
+
+                        var check = $$('input[name=' + elementId + ']:checked').val();
+                        
+                        if (check) {                             
+                            dataSheet[elementId] = check;
+                        }
+                    });
+
+                    $$('.checkbox-group').each(function (i, obj) {
+                        var elementId = $$(this).attr("id");
+
+                        var elements = '';
+
+                        $$('input[name=' + elementId + ']:checked').each(function () {
+                            var value = $$(this).val();
+                            elements += value + ",";
+                        });
+                        dataSheet[elementId] = elements.substring(0, elements.length - 1);
+                        
+                    });
+
+                    dataSheet['Email'] = $$("#Email").val();
+                    dataSheet['FullName'] = $$("#FullName").val();
+                    dataSheet['ExpositionTime'] = $$("#ExpositionTime").val();
+                    dataSheet['ProcessComments'] = $$("#ProcessComments").val();
+
+                    dataSheet['ClientId'] = clientId;
+                    dataSheet['OrderId'] = self.orderId;
+                    
+                    app.request({
+                        url: Util.mapPath('/api/datasheet'),
+                        method: 'POST',
+                        crossDomain: true,
+                        contentType: 'application/json',
+                        dataType: 'json',
+                        processData: false,
+                        data: JSON.stringify(dataSheet),
+                        success: function (data, status, xhr) {
+
+                            if (status == 200) {
+                                if (data.Status == true) {
+                                    self.$app.dialog.close();
+                                    app.router.navigate('/assignedorder/' + clientId + '/' + self.orderId, {
+                                        reloadCurrent: true,
+                                        ignoreCache: true,
+                                    });
+                                }
+                            }
+                        },
+                        error: function (xhr, status) {
+
+                            Util.showError('Ocurrio un error intentando guardar la ficha técnica, por favor intenta nuevamente');
+                        }
+                    });
+                    console.log(dataSheet);
+                }
+            },
+            validateForm: function () {
+                var self = this;
+                var $$ = self.$$;
+                var valid = true;
+
+                $$('.radio-group').each(function (i, obj) {
+                    var elementId = $$(this).attr("id");
+
+                    var check = $$('input[name=' + elementId + ']:checked').val();
+                    console.log(elementId);
+                    if (!check) {
+                        var text = $$("#" + elementId).data("text");
+                        Util.showMessage('Debes diligenciar el ' + text);
+                        valid = false;
+                        return false;
+                    }
+                });
+
+                $$('.checkbox-group').each(function (i, obj) {
+                    var elementId = $$(this).attr("id");
+                    var checked = false;
+                    
+                    $$('input[name=' + elementId + ']:checked').each(function () {
+                        checked = true;
+                    });
+
+                    if (!checked) {
+                        var text = $$("#" + elementId).data("text");
+                        Util.showMessage('Debes diligenciar el ' + text);
+                        valid = false;
+                        return false;
+                    }
+                });
+
+                if (!self.IsClient && ($$("#Email").val() == "" || $$("#FullName").val() == "")) {
+                    valid = false;
+                    Util.showMessage('Debes diligenciar los campos de datos personales.');                    
+                }
+                if ($$("#2-process").prop('checked') && $$("#ProcessComments").val() == "") {
+                    valid = false;
+                    Util.showMessage('Debes diligenciar el campo ¿por que no?');
+                }
+                if ($$("ExpositionTime").val() == "") {
+                    valid = false;
+                    Util.showMessage('Debes diligenciar el campo tiempo de exposición');
+                }
+                
+                return valid;
+            }
+           
+        }
+    };
+</script>

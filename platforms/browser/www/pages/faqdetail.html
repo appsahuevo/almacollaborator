@@ -1,0 +1,63 @@
+<template>
+    <div class="page resource-page" data-name="order">
+        <div class="navbar">
+            <div class="navbar-inner sliding">
+                <div class="left">
+                    <a href="#" class="link back">
+                        <img src="img/back-icon-blue.png" />
+                    </a>
+                </div>
+                <div class="title resources-title-navbar">Centro de ayuda</div>
+            </div>
+        </div>
+        <div class="page-content">
+            <div id="faq-contain">
+
+            </div>
+        </div>
+    </div>
+</template>
+<script>
+    return {
+        on: {
+            pageInit: function (e, page) {
+                var self = this;
+                var $$ = self.$$;
+                var faqId = this.$route.params.faqId;
+
+                self.getFaq(faqId);
+            }
+        },
+        methods: {
+            getFaq: function (faqId) {
+                var self = this;
+                var $$ = self.$$;
+                
+                self.$app.dialog.preloader('Un momento por favor...');
+
+                app.request({
+                    url: Util.mapPath('/api/Faq?faqId=' + faqId),
+                    method: 'GET',
+                    crossDomain: true,
+                    contentType: 'application/json',
+                    dataType: 'json',
+                    processData: false,
+                    success: function (data, status, xhr) {
+                        console.log(data);
+
+                        Util.renderTemplate($$, '#faq-template', '#faq-contain', data);
+
+                        self.$app.dialog.close();
+
+                    },
+                    error: function (xhr, status) {
+
+                        console.log("Ajax Error");
+                        console.log(status);
+                        console.log(xhr);
+                    }
+                });
+            }
+        }
+    };
+</script>

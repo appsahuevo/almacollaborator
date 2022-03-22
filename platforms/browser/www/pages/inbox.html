@@ -1,0 +1,68 @@
+<template>
+    <div class="page inbox-page" data-name="inbox">
+        <div class="navbar">
+            <div class="navbar-inner sliding">
+                <div class="left">
+                    <a href="/main/" class="link">
+                        <img src="img/back-icon-blue.png" />
+                    </a>
+                </div>
+                <div class="title resources-title-navbar">Notificaciones recientes</div>
+            </div>
+        </div>
+
+        <div class="page-content" id="inbox-content">
+           <div class="list media-list" id="inbox-list">
+
+           </div>
+        </div>
+    </div>
+</template>
+<script>
+    return {
+        on: {
+            pageBeforeIn: function (e, page) {
+
+                var self = this;
+                var $$ = self.$$;
+
+                Util.switchNavbarColor($$, "#fff");
+            },
+            pageInit: function (e, page) {
+                var self = this;
+                var $$ = self.$$;
+                
+                self.getMessages();
+            }
+        },
+        methods: {
+            getMessages: function () {
+                var self = this;
+                var $$ = self.$$;
+                self.$app.dialog.preloader('Un momento por favor...');
+
+                app.request({
+                    url: Util.mapPath('/api/inbox?collaboratorId=' + internalId),
+                    method: 'GET',
+                    crossDomain: true,
+                    contentType: 'application/json',
+                    dataType: 'json',
+                    processData: false,
+                    success: function (data, status, xhr) {
+                        
+                        Util.renderTemplate($$, '#inbox-list-template', '#inbox-list', data, "#inbox-content");
+
+                        self.$app.dialog.close();
+                      
+                    },
+                    error: function (xhr, status) {
+
+                        console.log("Ajax Error");
+                        console.log(status);
+                        console.log(xhr);
+                    }
+                });
+            }
+        }
+    }
+</script>

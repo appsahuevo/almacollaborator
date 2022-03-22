@@ -1,0 +1,1010 @@
+/* General */
+
+@font-face {
+    font-family: museo_light;
+    src: url(../fonts/MuseoSansCyrl-100.otf);
+}
+
+@font-face {
+    font-family: museo_bold;
+    src: url(../fonts/MuseoSansCyrl-700.otf);
+}
+
+body {
+    font-family: museo_light !important;
+}
+
+.login-page .navbar{
+    background: #d4e3b0;
+    box-shadow: unset !important;
+}
+
+.navbar:after {
+    height: 0px !important;
+}
+
+.ker-title {
+    font-family: museo_bold;
+    text-transform: none !important;
+    font-size: 21px !important;
+    line-height: 18px !important;
+}
+
+.md .button {
+    text-transform: none !important;
+}
+
+.error {
+    border-bottom: 2px solid #ff0000 !important;
+}
+
+.ker-button-outline{
+    font-family: museo_bold;
+    border: 1px solid #d2e1ae !important;
+    color: #d2e1ae !important;
+}
+
+.ker-button-fill{
+    font-family: museo_bold;
+    border: 1px solid #d2e1ae !important;
+    background-color: #d2e1ae !important;
+    color: #273F4A !important;
+}
+
+.ios .list ul {
+    background: none !important;;
+}
+
+#search-input{
+    border: 1px solid #d2e1ae !important;
+    background: #ffffff !important;
+}
+
+.ker-input{
+    border: 2px solid #d2e1ae !important;
+    border-radius: 22px !important;
+    padding-left: 10px !important;
+}
+
+.btn-wide{
+    padding-left: 30px; 
+    padding-right: 30px;
+}
+
+/* End General */
+
+/* iOS */
+
+.ios .toolbar {
+    background: #273F4A !important;
+}
+
+.ios .tabbar a.tab-link-active, .ios .tabbar-labels a.tab-link-active {
+    color: #fff;
+}
+
+.ios .dialog-title {
+    font-family: museo_bold !important;
+    color: #273F4A !important;
+}
+
+.ios .dialog-title+.dialog-text {
+    font-family: museo_light !important;
+    color: #273F4A !important;
+}
+
+.ios .dialog-button {
+    font-family: museo_bold !important;
+    color: #d2e1ae !important;
+}
+
+.ios .button.button-active, .ios .button.tab-link-active {
+    background: #273F4A;
+    color: #fff;
+}
+
+.ios .button {
+    border: 1px solid #273F4A;
+    color: #273F4A;
+    border-radius: 5px;
+    line-height: 27px;
+    height: 29px;
+}
+
+.ios .toolbar a.link {
+   color: #d2e1ae;
+}
+
+.ios .searchbar:after {
+    background-color: #fff !important;
+}
+
+.ios .list ul:before {
+    /* background-color: #fff !important; */
+    background-color: unset !important;
+}
+
+.ios .list .item-inner:after {
+    background-color: unset !important;
+}
+
+.ios .list ul:after {
+    background-color: unset !important;
+}
+
+.ios .item-input-wrap {
+    margin-bottom: 0px !important;
+}
+
+ios .checkbox i, .ios .icon-checkbox {
+    border-radius: 10% !important;
+    border: 2px solid #c7c7cc !important;
+}
+
+.ios .checkbox input[type=checkbox]:checked ~ i, .ios label.item-checkbox input[type=checkbox]:checked ~ .icon-checkbox {
+    background: #273F4A !important;
+}
+
+.ios .icon-radio {
+    border-radius: 50% !important;
+    border: 2px solid #c7c7cc;
+}
+
+.ios .radio input[type=radio]:checked ~ .icon-radio, .ios label.item-radio input[type=radio]:checked ~ * .icon-radio, .ios label.item-radio input[type=radio]:checked ~ .icon-radio {
+    background-color: #273F4A !important;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2013%2010'%3E%3Cpolygon%20fill%3D'%23ffffff'%20points%3D'11.6%2C0%204.4%2C7.2%201.4%2C4.2%200%2C5.6%204.4%2C10%204.4%2C10%204.4%2C10%2013%2C1.4%20'%2F%3E%3C%2Fsvg%3E") !important;
+    background-size: 13px 10px !important;
+    /* background: no-repeat center !important; */
+}
+
+.ios .calendar-day.calendar-day-selected span {
+    background: #273F4A;
+}
+
+.ios .calendar-day.calendar-day-has-events span:after {
+    background: #e91e63;
+}
+
+
+/* End iOS */
+
+/* Material Design */
+
+.md .dialog-title {
+    font-family: museo_bold !important;
+    color: #273F4A !important;
+}
+
+.md .dialog-title+.dialog-text {
+    font-family: museo_light !important;
+    color: #273F4A !important;
+}
+
+.md .dialog-button {
+    font-family: museo_bold !important;
+    color: #d2e1ae !important;
+}
+
+.md .segmented .button.button-outline {
+    border: 1px solid #273F4A;
+}
+
+.md .button.button-active, .md .button.button-fill, .md .button.button-fill-md, .md .button.tab-link-active {
+    background-color: #273F4A;
+    color: #fff !important;
+}
+
+.md .segmented .button.button-outline {
+    border: 1px solid #273F4A;
+    color:  #273F4A;
+}
+
+.md .subnavbar:after {
+    background: unset !important;
+}
+
+.md .navbar {
+    /* background-color: #ddd !important; */
+    background: rgba(0,0,0,0) !important;
+}
+
+.md .toolbar {
+    background: #273F4A !important;
+}
+
+.md .statusbar {
+    background: #273F4A !important;
+}
+
+.md .list {
+    margin-top: 1px !important;    
+}
+
+.md .input-focused:after, .md .item-input-focused .item-input-wrap:after {
+    background: unset !important;
+}
+
+.md .navbar .right {
+    margin-left: auto;
+    padding-right: 15px !important;
+}
+
+#connect-form .item-content {
+    min-height: 48px;
+    padding-left: 0px !important;
+    width: 100% !important;
+}
+
+.md label.item-radio input[type=radio]:checked ~ .icon-radio {
+    border-color: #273F4A !important;
+}
+
+    .md .radio input[type=radio]:checked ~ .icon-radio:after, .md label.item-radio input[type=radio]:checked ~ * .icon-radio:after, .md label.item-radio input[type=radio]:checked ~ .icon-radio:after {
+        background-color: #273F4A !important;
+    }
+
+.md .checkbox input[type=checkbox]:checked ~ i, .md label.item-checkbox input[type=checkbox]:checked ~ * .icon-checkbox, .md label.item-checkbox input[type=checkbox]:checked ~ .icon-checkbox {
+    background-color: #273F4A !important;
+    border-color: #273F4A !important;
+}
+
+.md label.item-checkbox > .icon-checkbox {
+    margin-right: 18px !important;
+}
+
+.md .calendar-day.calendar-day-selected span {
+    background: #273F4A !important;
+    color: #fff;
+}
+
+.md .calendar-day.calendar-day-has-events span:after {
+    background: #e91e63 !important;
+}
+
+/* End Material Design */
+
+/* Welcome Page */
+
+.welcome-page{
+    background: #273F4A !important;
+    background-image: url(../img/welcome-background.jpg) !important;
+    background-size: 100% 100% !important;
+}
+
+/* End Welcome Page */
+
+/* Sign Page */
+
+.signup-page{
+    background: #273F4A !important;
+    background-image: url(../img/bg.jpg) !important;
+    background-size: 100% 100% !important;   
+}
+
+.signup-page .item-label{
+    color: #d2e1ae !important;
+    font-family: museo_bold;
+}
+
+.signup-page input{
+    color: #d2e1ae !important;
+    /* border-bottom: 1px solid #4e8092 !important; */
+}
+
+.signup-page ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #4e8092 !important;
+
+}
+
+.ker-title-signin{
+    color: #d2e1ae !important;
+    font-family: museo_bold;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+/* End Sign Page */
+
+/* Login Page */
+
+.login-screen-content {
+    background: none !important;
+}
+
+.login-page{
+    background: #273F4A !important;
+    /* background-image: url(../img/bg.jpg) !important; */
+    background-size: 100% 100% !important;   
+    padding-top: 20px !important;
+}
+
+.login-page .item-label{
+    color: #d2e1ae !important;
+    font-family: museo_bold;
+}
+
+.login-page input{
+    color: #d2e1ae !important;
+    /* border-bottom: 1px solid #4e8092 !important; */
+}
+
+.login-page ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #4e8092 !important;
+
+}
+
+.ker-title-login{
+    color: #d2e1ae !important;
+    font-family: museo_bold;   
+}
+
+/* End Login Page */
+
+/* Categories Page */
+
+.categories-page{
+    background: #273F4A !important;
+}
+
+.categories-title-navbar{
+    color: #d2e1ae !important;
+    font-family: museo_bold !important;
+}
+
+.categories-menu-icon{
+    color: #d2e1ae !important;
+}
+
+.block-filter-buttons{
+    margin: 15px 0px !important;
+}
+
+#cat-lst{
+    margin: 25px 0px !important;
+}
+
+.custom-badge {
+    position: absolute !important;
+    top: 23px;
+    left: 5px;
+}
+
+
+/* End Categories Page */
+
+/* Resources Page */
+
+.resources-page{
+    background: #fff !important;
+}
+
+.resources-title-navbar{
+    color: #273F4A !important;
+    font-family: museo_bold !important;
+}
+
+.resources-menu-icon{
+    color: #273F4A !important;
+}
+
+.resources-page .navbar a {
+    color:#273F4A !important;
+}
+
+
+#resource-list .item-title{
+    font-family: museo_bold !important;
+    color: #273F4A !important;
+    font-size: 19px !important;
+}
+
+#resource-list .item-content{
+    color: #273F4A !important;
+}
+
+#resource-list .item-text{
+    font-family: museo_bold !important;
+    color: #273F4A !important;
+    font-size: 16px !important;
+}
+
+.resources-page .toolbar {
+    height: 44px;
+    font-size: 17px;
+    background: #d4e3b0 !important;
+    bottom: 0;
+    color: #273f4a !important;
+}
+
+.resources-page .title-total{
+    font-family: museo_bold;
+}
+
+.resources-page .hidden{
+    display: none !important;
+}
+
+#resources-subnavbar, #form-search{
+    background: #fff !important;
+}
+
+#what-titile{
+    font-family: museo_bold !important;
+    text-transform: unset !important;
+    margin-top: 16px !important;
+    color: #273F4A !important;
+}
+
+/* End Resources Page */
+
+/* Resource Page */
+
+.resource-page .card{
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+    margin-top: -45px !important;
+}
+
+.md .resource-page .card{
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+    margin-top: -102px !important;
+}
+
+.md label.item-radio>.icon-radio {
+    margin-right: 16px !important;
+}
+
+
+.resource-page .demo-card-header-pic .card-header{
+    height: 248px !important;
+    color: #d2e1ae !important;
+    font-size: 26px;
+    padding-bottom: 40px;
+    font-family: museo_bold;
+
+}
+
+.resource-page .md .navbar~* .page-content, .md .navbar~.page-content{
+    padding-top: 100px !important;
+}
+
+.resource-page .card-footer{
+    background: #273F4A !important;
+    color: #d2e1ae !important;
+    flex-direction: row-reverse;
+}
+
+.resource-page .block{
+    margin: 10px !important;
+}
+
+.resource-page .block-title{
+    background: #273F4A !important;
+    margin: 0px !important;
+    padding: 10px !important;
+    color: #d2e1ae !important;
+    text-transform: unset !important;
+}
+
+.resource-page .list{
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    color: #273F4A !important;
+}
+
+.blue-ker {
+    background:  #273F4A !important;
+    border-color: transparent;
+    color: #d2e1ae !important;
+}
+
+.resource-page .toolbar {
+    height: 44px;
+    font-size: 17px;
+    background: #d4e3b0 !important;
+    bottom: 0;
+    color: #273f4a !important;
+}
+
+.resource-page .title-total{
+    font-family: museo_bold;
+}
+
+#description-titile{
+    font-family: museo_bold !important;
+    color: #273f4a !important;
+}
+
+/* End Resource Page */
+
+/* Cart Page */
+
+.cart-page .item-title{
+    color: #273f4a !important;
+    font-family: museo_bold;
+}
+
+#cart-list{
+    margin-top: 5px !important;
+}
+
+#summary-cart{
+    text-align: center;
+    background: url(../img/bg-cart.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    min-height: 184px;   
+}
+
+#summary-cart .title{
+    color: #d2e1ae !important;
+    padding-top: 20px;
+    font-size: 14px !important;
+}
+
+#summary-cart .total-cart{
+    padding-top: 20px;
+    color: #d2e1ae !important;
+    font-size: 34px;
+}
+
+#summary-cart .warning{
+    padding-top: 20px;
+    color: #d2e1ae !important;
+    font-size: 11px !important;
+}
+
+.cart-title-navbar{
+    color: #273F4A !important;
+    font-family: museo_bold !important;
+}
+
+.cart-page .toolbar {
+    height: 44px;
+    font-size: 17px;
+    background: #d4e3b0 !important;
+    bottom: 0;
+    color: #273f4a !important;
+}
+
+.cart-page .title-total{
+    font-family: museo_bold;
+}
+/* End Cart Page */
+
+/* Settings Page */
+
+.link-page{
+    font-family: museo_light !important;
+    color: #273f4a !important;
+}
+/* End Settings Page */
+
+
+
+#floating-panel {
+    position: absolute;
+    bottom: 40px;
+    left: 25%;
+    z-index: 5;
+    /* background-color: #fff; */
+    padding: 5px;
+    /* border: 1px solid #999; */
+    text-align: center;
+    font-family: 'Roboto','sans-serif';
+    line-height: 30px;
+    padding-left: 10px;
+    width: 45%;
+  }
+
+/* New Address */
+
+#summary-newaddress{
+    text-align: center;
+    /* background: url(../img/bg-cart.png); */
+    background-repeat: no-repeat;
+    min-height: 184px;   
+}
+
+#summary-newaddress .title{
+    color: #273f4a !important;
+    padding-top: 20px;
+    font-size: 14px !important;
+}
+
+#summary-newaddress .address{
+    padding-top: 20px;
+    color: #273f4a !important;
+    font-size: 20px;
+}
+
+.newaddress-popup .page{
+    background-color: #fff !important;
+}
+
+/* End New Address */
+
+/* New Credit Card */
+
+.newpayment-popup .page{
+    background-color: #fff !important;
+}
+
+/* End Credit Card */
+
+/* Checkout Page */
+
+.link-new{
+    font-size: 17px;
+    padding: 10px 10px 10px 14px;
+    color: #273f4a !important;
+    font-family: museo_bold;
+}
+
+.checkout-page{
+    background-color: #fff !important;
+}
+
+
+
+.accordion-item-content{
+    padding: 0px 10px;
+}
+
+/* End Checkout Page */
+
+/* Order Page */
+
+.summary-order{
+    text-align: center;
+}
+
+.order-page{
+    background-color: #fff !important;
+}
+
+.timeline-item-divider {
+    background: #d2e1ae !important;
+}
+
+.timeline-item-date {
+    width: 130px !important;
+}
+
+#order-desc{
+    font-family: museo_bold !important;
+    color: #273f4a !important;
+    line-height: 1;
+}
+
+#order-address{
+    font-size: 18px;
+    color: #273f4a !important;
+}
+
+#order-date{
+    font-family: museo_light !important;
+    color: #273f4a !important;
+    line-height: 1;
+}
+
+#order-status{
+    font-family: museo_light !important;
+    color: #273f4a !important;
+    line-height: 1;
+}
+
+#order-cost{
+    font-family: museo_light !important;
+    color: #273f4a !important;
+    line-height: 1;
+}
+
+#orders-list .item-title{
+    font-family: museo_bold !important;
+    color: #273f4a !important;
+}
+
+#orders-list .item-subtitle{
+    color: #273f4a !important;
+}
+
+#orders-list .item-text{
+    color: #273f4a !important;
+}
+
+/* End Order Page */
+
+/* Main Page */
+.main-page{
+    background-color: #fff !important;
+}
+
+.assignedorder-page{
+    background-color: #fff !important;
+}
+
+.recommendedresources-page{
+    background-color: #fff !important;
+}
+
+.disconnect-popup .page{
+    background-color: #fff !important;
+}
+
+.connect-popup .page{
+    background-color: #fff !important;
+}
+
+.resource-page{
+    background-color: #fff !important;
+}
+
+.main-title-navbar{
+    color: #273F4A !important;
+    font-family: museo_bold !important;
+}
+
+#options-list .item-title{
+    font-family: museo_bold !important;
+    color: #273f4a !important;
+}
+
+#assigned-list .item-title{
+    font-family: museo_bold !important;
+    color: #273f4a !important;
+}
+
+#assigned-list .item-subtitle{
+    color: #273f4a !important;
+}
+
+#assigned-list .item-text{
+    color: #273f4a !important;
+}
+
+.connect-title{
+    font-family: museo_bold !important;
+    color: #273f4a !important;
+    font-size: 18px !important;
+    margin-top: 8px !important;
+}
+
+#title-calendar{
+    font-family: museo_bold !important;
+    color: #273f4a !important;
+    margin-top: 15px !important;
+}
+
+.summary-disconnect{
+    text-align: center;
+}
+
+.client-profile-username {
+    margin: auto;
+    margin-top: 0.30em;
+    font-size: 1.53em;
+    font-weight: bold;
+    color: #273F4A !important;
+}
+
+
+.block-skill-container {
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-bottom: 2px !important;
+    color: #273F4A !important;
+    font-family: museo_bold;
+}
+
+.skill-actions {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.line-separator {
+    height: 1px;
+    border-bottom: 1px solid #d2e1ae;
+    width: 48%;
+    left: 25%;
+    right: 40%;
+    position: absolute;
+}
+
+.padding-left {
+    padding-left: 12px;
+}
+
+.padding-right {
+    padding-right: 12px;
+}
+/* End Main Page */
+
+.empty-state{
+    background-image: url('../img/empty-state.png');
+    background-repeat:no-repeat;
+    background-position: center center;
+}
+
+#profits-list .item-title {
+    color: #273F4A !important;
+    font-size: 17px !important;
+}
+#profits-list .item-after {
+    font-family: museo_bold !important;
+    color: #273F4A !important;
+    font-size: 19px !important;
+}
+
+#profits-list .item-content {
+    color: #273F4A !important;
+}
+
+#profits-list .item-text {
+    font-family: museo_bold !important;
+    color: #273F4A !important;
+    font-size: 16px !important;
+}
+.line-separator {
+    height: 1px;
+    border-bottom: 1px solid #d2e1ae;
+    width: 48%;
+    left: 25%;
+    right: 40%;
+    position: absolute;
+}
+
+.profit-item {
+    background-image: none !important;
+}
+
+.text-aling-right {
+    text-align: right;
+}
+
+.padding-left {
+    
+    padding-left: 12px;
+}
+.padding-right {
+    padding-right: 12px;
+}
+
+.rate-image-0 {
+    max-height: 120px;
+    max-width: 120px;
+    width: 110px;
+    height: 110px;
+    display: block;
+    margin: auto;
+    padding-top: 10px;
+    border-radius: 50%
+}
+.collaborator-profile-username {
+    margin: auto;
+    margin-top: 0.30em;
+    font-size: 1.53em;
+    font-weight: bold;
+    color: #273F4A !important;
+}
+
+.collaborator-profile-resume {
+    margin: auto;
+    margin-top: 1.10em;
+    margin-bottom: 1.10em;
+}
+.star-color {
+    color: #273f4a;
+}
+.block-skill-container {
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-bottom: 2px !important;
+    color: #273F4A !important;
+    font-family: museo_bold;
+}
+.chip-collaborator-profile {
+    font-family: museo_bold;
+    background-color: #d2e1ae !important;
+    color: #273F4A !important;
+}
+.rate-padding-top {
+    padding-top: 55px;
+}
+.white-ker {
+    background: #d2e1ae !important;
+    border-color: transparent;
+    color: #273F4A !important;
+}
+.profile-page .md .navbar ~ *, .md .navbar ~ .page-content-profile {
+    padding-top: 46px !important;
+}
+/* End Main Page */
+
+.ios .profile-page{
+    padding-top: 60px !important;
+}
+
+.profile-page{
+    background-color: #fff !important;
+}
+
+.ios .toggle input[type=checkbox]:checked+.toggle-icon {
+    background: #273F4A !important;
+}
+
+
+.blink_me {
+    animation: blinker 1s linear infinite;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+
+.inbox-page .page-content{
+    background: #fff;
+}
+
+.inbox-page .item-inner{
+    color: #273f4a !important;
+}
+
+.inbox-page .item-title{
+    font-family: museo_bold !important;
+}
+
+.inbox-page .item-text{
+    color: #273f4a !important;
+}
+
+.news-card-header-pic .card-header {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+    margin-top: -45px !important;
+    height: 40vw;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.news-card-header-pic .card-content-padding .date {
+    color: #8e8e93;
+}
+
+.news-title {
+    font-weight: bold;
+    text-align: left;
+    color: #273F4A !important;
+    font-family: museo_bold;
+}
+
+.news-desc {
+    text-align: left;
+    color: #000000 !important;
+}
+.profitDetail-page .md .navbar ~ * .profitDetail-content, .md .navbar ~ .profitDetail-content {
+    padding-top: 56px !important;
+}
+
+.profitDetail-page{
+    background-color: #fff !important;
+}
+
+.faq-page{
+    background-color: #fff !important;
+}
+
+.rate-page .page-content{
+    background-color: #fff !important;
+}
+
+.k-list-scroller {
+    height: 350px;
+    overflow-y: scroll;
+    position:fixed !important;
+    z-index:200;
+}
