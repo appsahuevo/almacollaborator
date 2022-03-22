@@ -3,7 +3,7 @@
   "display": "standalone",
   "name": "Alma",
   "short_name": "Alma",
-  "version": "com.appsahuevo.almaclient",
+  "version": "com.appsahuevo.almacollabortor",
   "description": "A sample Apache Cordova application that responds to the deviceready event.",
   "author": "appahuevo team",
   "icons": [],
