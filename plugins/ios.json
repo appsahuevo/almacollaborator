@@ -1,0 +1,15 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-autostart": {
+      "PACKAGE_NAME": "com.appsahuevo.almacollabortor"
+    }
+  },
+  "dependent_plugins": {}
+}

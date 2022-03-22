@@ -1,0 +1,163 @@
+<template>
+  <div class="page recommendedresources-page" data-name="recommendedresources">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <!-- <i class="icon icon-back"></i>
+              <span class="ios-only">Back</span> -->
+            <img src="img/back-icon-blue.png" />
+          </a>
+        </div>
+        <div class="title resources-title-navbar">Para recomendar</div>
+        <div class="subnavbar" id="resources-subnavbar">
+          <form data-search-container="#recommended-list" data-search-in=".item-content" class="searchbar searchbar-init" id="form-search">
+            <div class="searchbar-inner">
+              <div class="searchbar-input-wrap">
+                <input type="search" placeholder="Buscar" id="search-input" />
+                <i class="searchbar-icon"></i>
+                <span class="input-clear-button"></span>
+              </div>
+              <span class="searchbar-disable-button">Cancelar</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <div class="block-title" id="what-titile">
+        Qué buscas?
+      </div>
+      <div class="block">
+        <p class="segmented segmented-round">
+          <button class="button button-round button-outline button-active" id="btn-all-filter" @click="viewAll">Todo</button>
+          <button class="button button-round button-outline" id="btn-beauty-filter" @click="viewBeauty">Belleza</button>
+          <button class="button button-round button-outline" id="btn-health-filter" @click="viewHealth">Salud</button>
+          <!-- <a href="#" class="link">Todo</a>
+                  <a href="#" class="link">Belleza</a>
+                  <a href="#" class="link">Salud</a> -->
+        </p>
+      </div>
+      <div class="searchbar-backdrop"></div>
+      <div class="list simple-list searchbar-not-found">
+        <ul>
+          <li>No encontrado</li>
+        </ul>
+      </div>
+      <div class="list media-list searchbar-found" id="recommended-list">
+
+      </div>
+    </div>
+
+  </div>
+</template>
+<script>
+  return {
+    on: {
+      pageBeforeIn: function (e, page) {
+
+        var self = this;
+        var $$ = self.$$;
+
+        Util.switchNavbarColor($$, "#fff");
+      },
+      pageInit: function (e, page) {
+
+        let self = this;
+        let $$ = self.$$;
+
+        let clientId = this.$route.params.clientId;
+        let orderId = this.$route.params.orderId;
+
+        self.$app.dialog.preloader('Un momento por favor...');
+
+        app.request({
+          url: Util.mapPath('/api/recommendedresources?collaboratorId=' + internalId + '&clientId=' + clientId + '&orderId=' + orderId),
+          method: 'GET',
+          crossDomain: true,
+          contentType: 'application/json',
+          dataType: 'json',
+          processData: false,
+          success: function (data, status, xhr) {
+
+            self.recommendedresources = data;
+
+            self.viewAll();
+
+            self.$app.dialog.close();
+          },
+          error: function (xhr, status) {
+
+            console.log("Ajax Error");
+            console.log(status);
+            console.log(xhr);
+          }
+        });
+        // page.toolbar.hide($$(".toolbar"), false);
+
+      }
+    },
+    methods: {
+      viewCart: function () {
+        app.router.navigate('/cart/', {});
+      },
+      viewAll: function () {
+        var self = this;
+        var $$ = self.$$;
+
+        $$("#btn-all-filter").addClass("button-active");
+        $$("#btn-beauty-filter").removeClass("button-active");
+        $$("#btn-health-filter").removeClass("button-active");
+
+        const data = self.filter(self.recommendedresources, "all");
+
+        Util.renderTemplate($$, '#recommended-list-template', '#recommended-list', data);
+      },
+      viewBeauty: function () {
+        var self = this;
+        var $$ = self.$$;
+
+        $$("#btn-all-filter").removeClass("button-active");
+        $$("#btn-beauty-filter").addClass("button-active");
+        $$("#btn-health-filter").removeClass("button-active");
+
+        const data = self.filter(self.recommendedresources, "belleza");
+
+        Util.renderTemplate($$, '#recommended-list-template', '#recommended-list', data);
+      },
+      viewHealth: function () {
+        var self = this;
+        var $$ = self.$$;
+
+        $$("#btn-all-filter").removeClass("button-active");
+        $$("#btn-beauty-filter").removeClass("button-active");
+        $$("#btn-health-filter").addClass("button-active");
+
+        const data = self.filter(self.recommendedresources, "salud");
+
+        Util.renderTemplate($$, '#recommended-list-template', '#recommended-list', data);
+      },
+      filter: function (data, condition) {
+        if (condition != "all") {
+          let result = [];
+
+          for (let i = 0; i < data.length; i++) {
+            const item = data[i];
+
+            if (item.Tags.toLowerCase().includes(condition.toLowerCase())) {
+              result.push(item);
+            }
+          }
+
+          return result;
+
+        } else {
+
+          return data;
+
+        }
+      }
+    }
+  };
+</script>
