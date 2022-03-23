@@ -173,9 +173,7 @@
       "id": "cordova-plugin-ionic-webview@^4.0.0"
     },
     "is_top_level": true,
-    "variables": {
-      "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
-    }
+    "variables": {}
   },
   "onesignal-cordova-plugin": {
     "source": {

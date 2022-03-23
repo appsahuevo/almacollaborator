@@ -4,5 +4,5 @@ platform :ios, '14.1.99'
 
 target 'Alma Collaborator' do
 	project 'Alma Collaborator.xcodeproj'
-
+	pod 'OneSignal', '2.16.5'
 end
