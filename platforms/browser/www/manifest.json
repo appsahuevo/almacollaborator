@@ -1,9 +1,9 @@
 {
   "background_color": "#FFF",
   "display": "standalone",
-  "name": "Alma Collaborator",
-  "short_name": "Alma Collaborator",
-  "version": "com.appsahuevo.almacollabortor",
+  "name": "Alma",
+  "short_name": "Alma",
+  "version": "com.appsahuevo.almaclient",
   "description": "A sample Apache Cordova application that responds to the deviceready event.",
   "author": "appahuevo team",
   "icons": [],

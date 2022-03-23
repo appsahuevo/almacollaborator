@@ -1,14 +1,6 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
     {
-        "file": "plugins/cordova-plugin-autostart/www/auto-start.js",
-        "id": "cordova-plugin-autostart.AutoStart",
-        "pluginId": "cordova-plugin-autostart",
-        "clobbers": [
-            "cordova.plugins.autoStart"
-        ]
-    },
-    {
         "file": "plugins/cordova-plugin-device/www/device.js",
         "id": "cordova-plugin-device.device",
         "pluginId": "cordova-plugin-device",
@@ -27,16 +19,21 @@ module.exports = [
         "id": "cordova-plugin-inappbrowser.inappbrowser",
         "pluginId": "cordova-plugin-inappbrowser",
         "clobbers": [
-            "cordova.InAppBrowser.open",
-            "window.open"
+            "cordova.InAppBrowser.open"
         ]
     },
     {
         "file": "plugins/cordova-plugin-inappbrowser/src/browser/InAppBrowserProxy.js",
         "id": "cordova-plugin-inappbrowser.InAppBrowserProxy",
         "pluginId": "cordova-plugin-inappbrowser",
-        "merges": [
-            ""
+        "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-ionic-webview/src/www/util.js",
+        "id": "cordova-plugin-ionic-webview.IonicWebView",
+        "pluginId": "cordova-plugin-ionic-webview",
+        "clobbers": [
+            "Ionic.WebView"
         ]
     },
     {
@@ -62,20 +59,24 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/cordova-plugin-statusbar/src/browser/statusbar.js",
-        "id": "cordova-plugin-statusbar.statusbar.Browser",
+        "file": "plugins/cordova-plugin-statusbar/src/browser/StatusBarProxy.js",
+        "id": "cordova-plugin-statusbar.StatusBarProxy",
         "pluginId": "cordova-plugin-statusbar",
-        "merges": [
-            "window.StatusBar"
+        "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-stripe/www/CordovaStripe.js",
+        "id": "cordova-plugin-stripe.stripe",
+        "pluginId": "cordova-plugin-stripe",
+        "clobbers": [
+            "cordova.plugins.stripe"
         ]
     },
     {
-        "file": "plugins/cordova-plugin-ionic-webview/src/www/util.js",
-        "id": "cordova-plugin-ionic-webview.IonicWebView",
-        "pluginId": "cordova-plugin-ionic-webview",
-        "clobbers": [
-            "Ionic.WebView"
-        ]
+        "file": "plugins/cordova-plugin-stripe/src/browser/CordovaStripe.js",
+        "id": "cordova-plugin-stripe.CordovaStripe",
+        "pluginId": "cordova-plugin-stripe",
+        "runs": true
     },
     {
         "file": "plugins/onesignal-cordova-plugin/www/OneSignal.js",
@@ -89,15 +90,15 @@ module.exports = [
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "cordova-plugin-autostart": "2.3.0",
-    "cordova-plugin-device": "1.1.7",
-    "cordova-plugin-inappbrowser": "1.3.0",
-    "cordova-plugin-splashscreen": "3.2.2",
-    "cordova-plugin-statusbar": "2.1.3",
-    "cordova-plugin-whitelist": "1.2.2",
-    "cordova-plugin-ionic-webview": "4.2.1",
+    "cordova-plugin-device": "2.0.2",
+    "cordova-plugin-inappbrowser": "4.1.0",
     "cordova-plugin-ionic-keyboard": "2.2.0",
-    "onesignal-cordova-plugin": "2.11.4"
+    "cordova-plugin-ionic-webview": "4.2.1",
+    "cordova-plugin-splashscreen": "5.0.2",
+    "cordova-plugin-statusbar": "2.4.2",
+    "cordova-plugin-stripe": "1.5.3",
+    "cordova-plugin-whitelist": "1.3.5",
+    "onesignal-cordova-plugin": "2.11.0"
 }
 // BOTTOM OF METADATA
 });
