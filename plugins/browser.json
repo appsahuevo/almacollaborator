@@ -10,7 +10,43 @@
     "cordova-plugin-autostart": {
       "PACKAGE_NAME": "com.appsahuevo.almacollabortor"
     },
-    "cordova-plugin-contacts": {
+    "cordova-plugin-battery-status": {
+      "PACKAGE_NAME": "com.appsahuevo.almacollabortor"
+    },
+    "cordova-plugin-console": {
+      "PACKAGE_NAME": "com.appsahuevo.almacollabortor"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.appsahuevo.almacollabortor"
+    },
+    "cordova-plugin-device-motion": {
+      "PACKAGE_NAME": "com.appsahuevo.almacollabortor"
+    },
+    "cordova-plugin-device-orientation": {
+      "PACKAGE_NAME": "com.appsahuevo.almacollabortor"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "com.appsahuevo.almacollabortor"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.appsahuevo.almacollabortor"
+    },
+    "cordova-plugin-globalization": {
+      "PACKAGE_NAME": "com.appsahuevo.almacollabortor"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "com.appsahuevo.almacollabortor"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.appsahuevo.almacollabortor"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.appsahuevo.almacollabortor"
+    },
+    "cordova-plugin-vibration": {
+      "PACKAGE_NAME": "com.appsahuevo.almacollabortor"
+    },
+    "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.appsahuevo.almacollabortor"
     }
   },
