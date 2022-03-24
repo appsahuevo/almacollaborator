@@ -9,6 +9,9 @@
   "installed_plugins": {
     "cordova-plugin-autostart": {
       "PACKAGE_NAME": "com.appsahuevo.almacollabortor"
+    },
+    "cordova-plugin-contacts": {
+      "PACKAGE_NAME": "com.appsahuevo.almacollabortor"
     }
   },
   "dependent_plugins": {}
