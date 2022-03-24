@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.appsahuevo.almacollabortor" version="1.0.6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Alma</name>
+    <name>Alma Collaborator</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
@@ -28,7 +28,7 @@
 
     <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
 
-    <platform name="android">
+     <platform name="android">
         <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application" xmlns:android="http://schemas.android.com/apk/res/android">
             <application android:usesCleartextTraffic="true" />
         </edit-config>

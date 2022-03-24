@@ -7,32 +7,8 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-device": {
-      "PACKAGE_NAME": "com.appsahuevo.almaclient"
-    },
-    "cordova-plugin-inappbrowser": {
-      "PACKAGE_NAME": "com.appsahuevo.almaclient"
-    },
-    "cordova-plugin-ionic-keyboard": {
-      "PACKAGE_NAME": "com.appsahuevo.almaclient"
-    },
-    "cordova-plugin-ionic-webview": {
-      "PACKAGE_NAME": "com.appsahuevo.almaclient"
-    },
-    "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "com.appsahuevo.almaclient"
-    },
-    "cordova-plugin-statusbar": {
-      "PACKAGE_NAME": "com.appsahuevo.almaclient"
-    },
-    "cordova-plugin-stripe": {
-      "PACKAGE_NAME": "com.appsahuevo.almaclient"
-    },
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.appsahuevo.almaclient"
-    },
-    "onesignal-cordova-plugin": {
-      "PACKAGE_NAME": "com.appsahuevo.almaclient"
+    "cordova-plugin-autostart": {
+      "PACKAGE_NAME": "com.appsahuevo.almacollabortor"
     }
   },
   "dependent_plugins": {}
