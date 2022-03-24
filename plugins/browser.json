@@ -7,27 +7,6 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-autostart": {
-      "PACKAGE_NAME": "com.appsahuevo.almacollabortor"
-    },
-    "cordova-plugin-battery-status": {
-      "PACKAGE_NAME": "com.appsahuevo.almacollabortor"
-    },
-    "cordova-plugin-console": {
-      "PACKAGE_NAME": "com.appsahuevo.almacollabortor"
-    },
-    "cordova-plugin-device": {
-      "PACKAGE_NAME": "com.appsahuevo.almacollabortor"
-    },
-    "cordova-plugin-device-motion": {
-      "PACKAGE_NAME": "com.appsahuevo.almacollabortor"
-    },
-    "cordova-plugin-device-orientation": {
-      "PACKAGE_NAME": "com.appsahuevo.almacollabortor"
-    },
-    "cordova-plugin-dialogs": {
-      "PACKAGE_NAME": "com.appsahuevo.almacollabortor"
-    },
     "cordova-plugin-geolocation": {
       "PACKAGE_NAME": "com.appsahuevo.almacollabortor"
     },
@@ -47,6 +26,12 @@
       "PACKAGE_NAME": "com.appsahuevo.almacollabortor"
     },
     "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.appsahuevo.almacollabortor"
+    },
+    "onesignal-cordova-plugin": {
+      "PACKAGE_NAME": "com.appsahuevo.almacollabortor"
+    },
+    "cordova-plugin-autostart": {
       "PACKAGE_NAME": "com.appsahuevo.almacollabortor"
     }
   },

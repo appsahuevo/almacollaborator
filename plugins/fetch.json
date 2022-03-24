@@ -1,12 +1,4 @@
 {
-  "cordova-plugin-battery-status": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-battery-status@~1.1.1"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-camera": {
     "source": {
       "type": "registry",
@@ -19,14 +11,6 @@
     "source": {
       "type": "registry",
       "id": "cordova-plugin-media-capture@~1.2.0"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
-  "cordova-plugin-console": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-console@~1.0.2"
     },
     "is_top_level": true,
     "variables": {}
@@ -111,14 +95,6 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-device": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-device@~1.1.1"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-device-motion": {
     "source": {
       "type": "registry",
@@ -151,10 +127,26 @@
     "is_top_level": true,
     "variables": {}
   },
+  "cordova-plugin-ionic-webview": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-ionic-webview@^4.0.0"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "onesignal-cordova-plugin": {
+    "source": {
+      "type": "registry",
+      "id": "onesignal-cordova-plugin@^2.11.0"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
   "cordova-plugin-inappbrowser": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-inappbrowser@^4.0.0"
+      "id": "cordova-plugin-inappbrowser@5.0.0"
     },
     "is_top_level": true,
     "variables": {}
