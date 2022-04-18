@@ -100,19 +100,27 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/cordova-plugin-ionic-webview/src/www/util.js",
-        "id": "cordova-plugin-ionic-webview.IonicWebView",
-        "pluginId": "cordova-plugin-ionic-webview",
-        "clobbers": [
-            "Ionic.WebView"
-        ]
-    },
-    {
         "file": "plugins/onesignal-cordova-plugin/www/OneSignal.js",
         "id": "onesignal-cordova-plugin.OneSignal",
         "pluginId": "onesignal-cordova-plugin",
         "clobbers": [
             "OneSignal"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-autostart/www/auto-start.js",
+        "id": "cordova-plugin-autostart.AutoStart",
+        "pluginId": "cordova-plugin-autostart",
+        "clobbers": [
+            "cordova.plugins.autoStart"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-ionic-webview/src/www/util.js",
+        "id": "cordova-plugin-ionic-webview.IonicWebView",
+        "pluginId": "cordova-plugin-ionic-webview",
+        "clobbers": [
+            "Ionic.WebView"
         ]
     },
     {
@@ -128,14 +136,6 @@ module.exports = [
         "id": "cordova-plugin-inappbrowser.InAppBrowserProxy",
         "pluginId": "cordova-plugin-inappbrowser",
         "runs": true
-    },
-    {
-        "file": "plugins/cordova-plugin-autostart/www/auto-start.js",
-        "id": "cordova-plugin-autostart.AutoStart",
-        "pluginId": "cordova-plugin-autostart",
-        "clobbers": [
-            "cordova.plugins.autoStart"
-        ]
     }
 ];
 module.exports.metadata = 
@@ -148,10 +148,11 @@ module.exports.metadata =
     "cordova-plugin-statusbar": "2.1.3",
     "cordova-plugin-vibration": "2.1.6",
     "cordova-plugin-whitelist": "1.2.2",
-    "cordova-plugin-ionic-webview": "4.2.1",
     "onesignal-cordova-plugin": "2.11.4",
-    "cordova-plugin-inappbrowser": "5.0.0",
-    "cordova-plugin-autostart": "2.3.0"
+    "cordova-plugin-autostart": "2.3.0",
+    "cordova-plugin-ionic-keyboard": "2.2.0",
+    "cordova-plugin-ionic-webview": "4.2.1",
+    "cordova-plugin-inappbrowser": "4.1.0"
 }
 // BOTTOM OF METADATA
 });
