@@ -4,13 +4,13 @@
             <div class="navbar-inner sliding">
                 <div class="left">
                     <a href="#" class="link back">
-                        <img src="img/back-icon-blue.png" />
+                        <img src="img/back-green.svg" />
                     </a>
                 </div>
                 <div class="title resources-title-navbar">Historial de servicios</div>
             </div>
         </div>
-        <div class="page-content">
+        <div class="page-content" style="background-color: #EFE7E6;">
             <div class="list media-list" id="services-list">
             </div>
         </div>
@@ -34,7 +34,7 @@
                 self.$app.dialog.preloader('Un momento por favor...');
 
                 app.request({
-                    url: Util.mapPath('/api/ClosedOrder?collaboratorId=' + internalId + '&onlyClosed=false'),
+                    url: Util.mapPath('/api/ClosedOrder?tenantId=' + tenantId + '&collaboratorId=' + internalId + '&onlyClosed=false'),
                     method: 'GET',
                     crossDomain: true,
                     contentType: 'application/json',

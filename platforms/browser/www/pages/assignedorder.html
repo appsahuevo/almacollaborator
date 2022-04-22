@@ -4,7 +4,7 @@
             <div class="navbar-inner sliding">
                 <div class="left">
                     <a href="/main/" class="link">
-                        <img src="img/back-icon-blue.png" />
+                        <img src="img/back-green.svg" />
                     </a>
                 </div>
                 <div class="title resources-title-navbar">Servicio asignado</div>
@@ -31,7 +31,7 @@
                 <p class="segmented segmented-round">
                     <button class="button button-round button-outline" id="clientProfile">Ver cliente</button>
                     <button class="button button-round button-outline" @click="addService" id="addServiceButton">+ Servicio</button>
-                    <button class="button button-round button-outline" @click="showRecommendationList">+ Recomendar</button>
+                    <!-- <button class="button button-round button-outline" @click="showRecommendationList">+ Recomendar</button> -->
                     
                 </p>
             </div>
@@ -100,17 +100,19 @@
 
                 var orderId = this.$route.params.orderId;
                 var clientId = this.$route.params.clientId;
+                var internalClientId = this.$route.params.internalClientId;
+
 
                 $$('#order-action').on('click', function () {
                     self.actions.open();
                 });
                 $$('#clientProfile').on('click', function () {
-                    app.router.navigate('/clientprofile/' + clientId, {});
+                    app.router.navigate('/clientprofile/' + clientId + '/' + internalClientId, {});
                 });
 
                 self.getOrderHistory(clientId, orderId);
 
-                self.getDetail(clientId, orderId);
+                self.getDetail(internalClientId, orderId);
 
                 //self.getStatus(clientId, orderId);
 
@@ -175,7 +177,8 @@
 
                 let wrapper = {
                     OrderId: this.$route.params.orderId,
-                    InternalClientId: this.$route.params.clientId,
+                    ClientId: this.$route.params.clientId,
+                    InternalClientId: this.$route.params.internalClientId,
                     CollaboratorId: internalId,
                     NewStatus: e.target.innerText
                 };
@@ -226,7 +229,7 @@
 
                                 toastWithCustomButton.open();
 
-                                app.router.navigate('/assignedorder/' + wrapper.InternalClientId + '/' + wrapper.OrderId, {
+                                app.router.navigate('/assignedorder/' + wrapper.ClientId + '/' + wrapper.OrderId + '/' + wrapper.InternalClientId, {
                                     reloadCurrent: true,
                                     ignoreCache: true,
                                 });
@@ -289,7 +292,7 @@
 
                                 toastWithCustomButton.open();
 
-                                app.router.navigate('/assignedorder/' + wrapper.InternalClientId + '/' + wrapper.OrderId, {
+                                app.router.navigate('/assignedorder/' + wrapper.ClientId + '/' + wrapper.OrderId + '/' + wrapper.InternalClientId, {
                                     reloadCurrent: true,
                                     ignoreCache: true,
                                 });
@@ -393,7 +396,7 @@
                 var $$ = self.$$;
                 console.log("getStatus");
                 app.request({
-                    url: Util.mapPath('/api/status?clientId=' + clientId + '&orderId=' + orderId),
+                    url: Util.mapPath('/api/status?tenantId=' + tenantId + '&clientId=' + clientId + '&orderId=' + orderId),
                     method: 'GET',
                     crossDomain: true,
                     contentType: 'application/json',

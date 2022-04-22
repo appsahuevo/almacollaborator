@@ -4,16 +4,16 @@
             <div class="navbar-inner sliding">
                 <div class="left">
                     <a href="#" class="link back">
-                        <img src="img/back-icon-blue.png" />
+                        <img src="img/back-green.svg" />
 
                     </a>
                 </div>
                 <div class="title resources-title-navbar">Perfil de cliente</div>
             </div>
         </div>
-        <div class="page-content" style="background: #fff">
+        <div class="page-content" style="background: #EFE7E6 ">
             <div class="summary-order">
-                <img id="profile-image" src="img/logo_profile.png" />
+                <img id="profile-image" src="img/almaLogo.png" style="width: 60%;"/>
 
                 <div class="client-profile-username" id="profile-name"></div>
             </div>
@@ -27,16 +27,16 @@
                         <img id="profile-call-img" src="img/phone.png" />
                     </a>
                     <br />
-                    <span style="padding-right:18px">Llamar</span><br />
-                    <span class="phoneNumber"></span>
+                    <span class="title-subtitle-color" style="padding-right:18px">Llamar</span><br />
+                    <span class="phoneNumber title-subtitle-color"></span>
                 </div>
                 <div class="col-50 justify-content-left padding-left">
                     <a href="#" class="external" id="mesagge">
                         <img id="profile-message-img" src="img/chat.png" />
                     </a>
                     <br />
-                    <span style="padding-left:20px">Chat</span><br />
-                    <span class="phoneNumber"></span>
+                    <span class="title-subtitle-color" style="padding-left:20px">Chat</span><br />
+                    <span class="phoneNumber title-subtitle-color"></span>
                 </div>
             </div>
         </div>
@@ -50,24 +50,27 @@
                 var $$ = self.$$;
 
                 var clientId = this.$route.params.clientId;
+                var internalClientId = this.$route.params.internalClientId;
 
-                self.getClientData(clientId);
+                self.getClientData(clientId, internalClientId);
             }
         },
         methods: {
-            getClientData: function (clientId) {
+            getClientData: function (clientId, internalClientId) {
                 var self = this;
                 var $$ = self.$$;
                 self.$app.dialog.preloader('Un momento por favor...');
 
                 app.request({
-                    url: Util.mapPath('/api/CLient?clientId=' + clientId),
+                    url: Util.mapPath('/api/CLient?tenantId=' + tenantId + '&clientId=' + internalClientId),
                     method: 'GET',
                     crossDomain: true,
                     contentType: 'application/json',
                     dataType: 'json',
                     processData: false,
                     success: function (data, status, xhr) {
+
+                        console.log(data);
 
                         $$("#profile-name").text(data.Fullname);
                         self.$app.dialog.close();

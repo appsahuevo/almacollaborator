@@ -45,13 +45,15 @@
                 self.$app.dialog.preloader('Un momento por favor...');
 
                 app.request({
-                    url: Util.mapPath('/api/orderhistory?collaboratorId=' + internalId + '&orderId=' + orderId),
+                    url: Util.mapPath('/api/orderhistory?tenantId=' + tenantId +'&collaboratorId=' + internalId + '&orderId=' + orderId),
                     method: 'GET',
                     crossDomain: true,
                     contentType: 'application/json',
                     dataType: 'json',
                     processData: false,
                     success: function (data, status, xhr) {
+
+                        console.log(data);
 
                         $$("#order-desc").text(data.Order.Description);
                         $$("#order-date").text(Util.formatDate(data.Order.DeliveryDate));

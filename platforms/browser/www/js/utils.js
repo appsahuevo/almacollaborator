@@ -3,7 +3,7 @@
 //const baseUrl = "http://mykerwebapi-appsvc-qa.azurewebsites.net/";
 // const baseUrl = "https://mykerwebapi-appsvc-prd.azurewebsites.net/";
 const baseUrl = "https://myalma-webapi.azurewebsites.net";
-//const baseUrl = "http://192.168.1.9:28957/";
+//const baseUrl = "http://192.168.1.9:28957";
 
 
 
@@ -12,7 +12,7 @@ var Util = {
         return baseUrl + '/' + path;
     },
     signIn: function (signinData, successCallback, errorCallback) {
-
+console.log(signinData);
         app.request({
             url: Util.mapPath('api/SignIn'),
             method: 'POST',

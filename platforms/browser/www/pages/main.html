@@ -1,26 +1,13 @@
 <template>
     <div class="page main-page" data-name="main">
         <div class="navbar">
-            <div class="navbar-inner sliding">
-                <div class="left">
-                    <div class="title main-title-navbar">Estas desconectado</div>
-                </div>
-                <div class="right">
-                    <!-- <label class="toggle toggle-init" id="toggle-connect">
-                        <input type="checkbox">
-                        <span class="toggle-icon"></span>
-                    </label> -->
-                    <a href="/inbox/" class="link icon-only" data-panel="left" style="padding: 0px !important">
-                        <!-- <i class="icon f7-icons ios-only blink_me">bell
-                            <span class="badge color-red ">1</span>
-                        </i> -->
-                        <!-- <i class="icon f7-icons ios-only">bell
-                            <span class="badge color-red ">1</span>
-                        </i>
-                        <i class="icon material-icons md-only">bell
-                            <span class="badge color-red"></span>
-                        </i> -->
-                        <img src="img/notification.png" alt="notificación" width="50%" />
+            <div class="navbar-inner ">                
+                <div class="sliding categories-title-navbar" style="width: 100%;text-align: center;padding-top: 15px">
+                    <img src="img/almaLogo.png" height="50" class="img-logo-top" />
+                </div> 
+                <div class="right">                    
+                    <a href="/inbox/" class="link icon-only" data-panel="left" style="padding: 0px !important">                        
+                        <i class="icon f7-icons alma-notification-color">bell</i>  
                     </a>
                 </div>
             </div>
@@ -54,7 +41,7 @@
                 </a>
             </div>
         </div>
-        <div class="tabs">
+        <div class="tabs" style="background-color: #EFE7E6;">
             <div id="tab-1" class="page-content tab tab-active ptr-content" @ptr:refresh="loadMore">
                 <div class="ptr-preloader">
                     <div class="preloader"></div>
@@ -78,7 +65,7 @@
                 <div class="block-title" id="title-calendar" style="text-align: center;">
 
                 </div>
-                <div id="calendar" class="block block-strong no-padding no-margin no-hairline-top"></div>
+                <div id="calendar" class="block block-strong no-hairline-top"></div>
 
                 <div class="list media-list" id="assigned-list" style="margin-top: 0px !important;">
                     <ul></ul>
@@ -90,8 +77,8 @@
                     <ul>
                         <li>
                             <a href="/profile/" class="item-link item-content">
-                                <div class="item-media">
-                                    <img src="img/profile-icon.png" />
+                                <div class="item-media">                                    
+                                    <i class="icon f7-icons alma-profile-color">person</i>  
                                 </div>
                                 <div class="item-inner">
                                     <div class="item-title">Mi Perfil</div>
@@ -101,8 +88,8 @@
                         </li>
                         <li>
                             <a href="/servicehistory/" class="item-link item-content">
-                                <div class="item-media">
-                                    <img src="img/order-history-icon.png" />
+                                <div class="item-media">                                    
+                                    <i class="icon f7-icons alma-profile-color">list_bullet</i>  
                                 </div>
                                 <div class="item-inner">
                                     <div class="item-title">Historial de servicios</div>
@@ -112,8 +99,8 @@
                         </li>
                         <li id="mnu-benefits">
                             <a href="/profits/" class="item-link item-content">
-                                <div class="item-media">
-                                    <img src="img/payments-icon.png" />
+                                <div class="item-media">                                    
+                                    <i class="icon f7-icons alma-profile-color">money_dollar</i>  
                                 </div>
                                 <div class="item-inner">
                                     <div class="item-title">Mis ganancias</div>
@@ -122,8 +109,8 @@
                         </li>
                         <li>
                             <a href="/faq/" class="item-link item-content">
-                                <div class="item-media">
-                                    <img src="img/support-icon.png" />
+                                <div class="item-media">                                    
+                                    <i class="icon f7-icons alma-profile-color">gear_alt</i>  
                                 </div>
                                 <div class="item-inner">
                                     <div class="item-title">Centro de ayuda</div>
@@ -133,10 +120,10 @@
                         </li>
                     </ul>
                 </div>
-                <div class="block">
+                <!-- <div class="block">
                     <a class="button button-round button-outline ker-button-outline btn-wide" id="show-disconnect-popup">Desconectar</a>
                     <a class="button button-round button-fill blue-ker btn-wide" style="display: none;" id="show-connect-popup">Conectar</a>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -158,7 +145,9 @@
         height: 100%;
         overflow: auto;
     }
-
+    .calendar-inline{
+            border-radius: 17px !important;
+        }
     @media (orientation: landscape) {
         #calendar {
             float: left;
@@ -177,6 +166,9 @@
         }
         .theme-dark #calendar-events {
             border-left-color: #282828;
+        }
+        .calendar-inline{
+            border-radius: 17px !important;
         }
     }
 </style>
@@ -356,7 +348,7 @@
                 //         console.log("Ajax Error");
                 //         console.log(status);
                 //         console.log(xhr);
-                //         self.$app.dialog.close();
+                //         self.$app.dialog.close(); 
                 //     }
                 // });
             },
@@ -367,7 +359,7 @@
                 self.$app.dialog.preloader('Un momento por favor...');
 
                 app.request({
-                    url: Util.mapPath('/api/availableorders?collaboratorId=' + internalId),
+                    url: Util.mapPath('/api/availableorders?tenantId=' + tenantId + '&collaboratorId=' + internalId + '&clientId=s' ),
                     method: 'GET',
                     crossDomain: true,
                     contentType: 'application/json',
@@ -419,9 +411,12 @@
                 var $$ = self.$$;
 
                 // self.$app.dialog.preloader('Un momento por favor...');
-
+                var user = "";
+                localforage.getItem('credentials-myker', function (err, value) {
+                    user = value.internalId;
+                
                 app.request({
-                    url: Util.mapPath('/api/assignedorders?collaboratorId=' + internalId),
+                    url: Util.mapPath('/api/assignedorders?tenantId=' + tenantId + '&collaboratorId=' + user),
                     method: 'GET',
                     crossDomain: true,
                     contentType: 'application/json',
@@ -467,6 +462,7 @@
                         }
                     }
                 });
+            });
             },
             renderEvents: function (calendar) {
                 var self = this;
@@ -664,7 +660,7 @@
                 self.$app.dialog.preloader('Un momento por favor...');
 
                 app.request({
-                    url: Util.mapPath('/api/collaborator?collaboratorId=' + internalId),
+                    url: Util.mapPath('/api/collaborator?tenantId=' + tenantId + '&collaboratorId=' + internalId),
                     method: 'GET',
                     crossDomain: true,
                     contentType: 'application/json',
@@ -673,7 +669,7 @@
                     success: function (data, status, xhr) {
 
                         self.$app.dialog.close();
-
+                        console.log(data);
                         if (data.IsConnected) {
 
                             $$(".main-title-navbar").text("Estas conectado");

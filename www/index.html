@@ -262,7 +262,7 @@
             </div>
         </div>
 
-        <div class="block">
+        <div class="block" style="background-color: #fff;margin:unset !important">
             <div class="block-titile" id="description-titile">Descripción del servicio</div>
             <br>
             {{Resource.Description}}
@@ -272,7 +272,7 @@
 
         {{#if Variant.IsMultipleSelection}}
         <div class="block-title">{{Variant.Name}}</div>
-        <div class="list">
+        <div class="list" style="background-color: #fff">
             <ul class="checkbox-group" id="checkbox-group-{{Variant.RowKey}}">
                 {{#each Options}}
                 <li>
@@ -325,7 +325,7 @@
         {{/if}}
         {{/each}}
         <div class="block-title">Comentarios</div>
-        <div class="block">
+        <div class="block" style="background-color: #fff">
             <p>{{Comments}}</p>
         </div>
     </script>
@@ -537,7 +537,7 @@
         </ul>
     </script>
 
-    <!-- Plantilla para listado de pedidos en curso en la página main.html -->
+    <!-- Plantilla para listado de pedidos en curso en la página main.html --> 
     <script id="orders-applied-list-template" type="text/template">
         <ul>
             {{#each this}}           
@@ -602,7 +602,7 @@
         <ul>
             {{#each this}}
             <li style="border: 1px solid #ddd">
-                <a href="/assignedorder/{{PartitionKey}}/{{RowKey}}" class="item-link item-content">
+                <a href="/assignedorder/{{PartitionKey}}/{{RowKey}}/{{InternalClientId}}" class="item-link item-content">
                     <div class="item-media">
                         <!-- <img src="{{ImageUrl}}" width="80" /> -->
                         {{shorttime DeliveryDate}}
@@ -742,7 +742,7 @@
             <li>
                 <!--<a href="#" class="item-link item-content">-->
                 <a href="/orderdetail/{{RowKey}}" class="item-link item-content">
-                    <div class="item-media"><img src="{{ImageUrl}}" width="80" /></div>
+                    <div class="item-media border-radius-img"><img src="{{ImageUrl}}" width="80" /></div>
                     <div class="item-inner">
                         <div class="item-title-row">
                             <div class="item-title">{{Description}}</div>

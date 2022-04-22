@@ -15,6 +15,10 @@
     src: url(../fonts/MuseoSansCyrl-700.otf);
 }
 
+.title-subtitle-color{
+    color: var(--quickorder-secondary-color);
+}
+
 body {
     font-family: museo_light !important;
 }
@@ -33,6 +37,36 @@ body {
     text-transform: none !important;
     font-size: 21px !important;
     line-height: 18px !important;
+}
+#options-list li .item-title{
+    color:var(--quickorder-secondary-color) !important;
+}
+
+.alma-notification-color{
+    color: var(--quickorder-title-color) !important;
+}
+
+.alma-profile-color{
+    color: var(--quickorder-secondary-color) !important;
+}
+
+.list .item-link .item-inner{
+    background-image: url(../img/forward.svg);
+}
+
+.block-title{
+    color: var(--quickorder-secondary-color) !important;
+}
+
+.md .list ul:after{
+    height: unset !important;
+}
+
+.md .list ul:before {
+    height: unset !important;
+}
+.md .list .item-inner:after {
+    height: unset !important;
 }
 
 .md .button {
@@ -61,8 +95,9 @@ body {
 }
 
 #search-input{
-    border: 1px solid #d2e1ae !important;
+    border: 1px solid var(--quickorder-secondary-color) !important;
     background: #ffffff !important;
+    border-radius: 17px;
 }
 
 .ker-input{
@@ -107,7 +142,7 @@ body {
 /* iOS */
 
 .ios .toolbar {
-    background: #849CA0 !important;
+    background: var(--quickorder-secondary-color) !important;
 }
 
 .ios .tabbar a.tab-link-active, .ios .tabbar-labels a.tab-link-active {
@@ -135,8 +170,8 @@ body {
 }
 
 .ios .button {
-    border: 1px solid #849CA0;
-    color: #849CA0;
+    border: 1px solid var(--quickorder-secondary-color);
+    color: var(--quickorder-secondary-color);
     border-radius: 5px;
     line-height: 27px;
     height: 29px;
@@ -189,13 +224,16 @@ ios .checkbox i, .ios .icon-checkbox {
 }
 
 .ios .calendar-day.calendar-day-selected span {
-    background: #849CA0;
+    background: var(--quickorder-secondary-color)
 }
 
 .ios .calendar-day.calendar-day-has-events span:after {
     background: #e91e63;
 }
 
+.ios .block-strong {
+    background-color: var(--quickorder-product-ribon-background);
+}
 
 /* End iOS */
 
@@ -203,12 +241,12 @@ ios .checkbox i, .ios .icon-checkbox {
 
 .md .dialog-title {
     font-family: museo_bold !important;
-    color: #849CA0 !important;
+    color: var(--quickorder-title-color) !important;
 }
 
 .md .dialog-title+.dialog-text {
     font-family: museo_light !important;
-    color: #849CA0 !important;
+    color: var(--quickorder-title-color) !important;
 }
 
 .md .dialog-button {
@@ -221,13 +259,33 @@ ios .checkbox i, .ios .icon-checkbox {
 }
 
 .md .button.button-active, .md .button.button-fill, .md .button.button-fill-md, .md .button.tab-link-active {
-    background-color: #849CA0;
+    background-color: var(--quickorder-title-color);
     color: #fff !important;
 }
 
+#services-list li .item-title{
+    color: var(--quickorder-theme-color);
+}
+
+#services-list li .item-subtitle{
+    color: var(--quickorder-secondary-color);
+}
+
+#services-list li .item-text{
+    color: var(--quickorder-secondary-color);
+}
+
+.media-list .item-link .item-title-row{
+    background-image: unset !important;
+}
+
+.border-radius-img img{
+    border-radius: 13px;
+}
+
 .md .segmented .button.button-outline {
-    border: 1px solid #849CA0;
-    color:  #849CA0;
+    border: 1px solid var(--quickorder-secondary-color);
+    color:  var(--quickorder-secondary-color);
 }
 
 .md .subnavbar:after {
@@ -235,12 +293,12 @@ ios .checkbox i, .ios .icon-checkbox {
 }
 
 .md .navbar {
-    /* background-color: #ddd !important; */
-    background: rgba(0,0,0,0) !important;
+    background-color: #fff !important; 
+    /*background: rgba(0,0,0,0) !important;*/
 }
 
 .md .toolbar {
-    background: #849CA0 !important;
+    background: var(--quickorder-secondary-color) !important;
 }
 
 .md .statusbar {
@@ -248,7 +306,7 @@ ios .checkbox i, .ios .icon-checkbox {
 }
 
 .md .list {
-    margin-top: 1px !important;    
+    margin-top: 22px !important;    
 }
 
 .md .input-focused:after, .md .item-input-focused .item-input-wrap:after {
@@ -288,7 +346,7 @@ ios .checkbox i, .ios .icon-checkbox {
 }
 
 .md .calendar-day.calendar-day-selected span {
-    background: #849CA0 !important;
+    background: var(--quickorder-secondary-color) !important;
     color: #fff;
 }
 
@@ -368,6 +426,12 @@ ios .checkbox i, .ios .icon-checkbox {
     
 }
 
+.categories-title-navbar{
+    color: var(--f7-theme-color) !important;
+    font-family: var(--quickorder-font-family);
+    font-weight: 700;
+}
+
 /* End Login Page */
 
 /* Categories Page */
@@ -399,18 +463,28 @@ ios .checkbox i, .ios .icon-checkbox {
     left: 5px;
 }
 
+/* #resource-list .item-title{
+    color: var(--quickorder-secondary-color) !important;
+}
 
+#resource-list .item-text{
+    color: var(--quickorder-secondary-color) !important;
+} */
 /* End Categories Page */
 
 /* Resources Page */
 
 .resources-page{
-    background: #fff !important;
+    background: var(--quickorder-product-ribon-background) !important;
 }
 
 .resources-title-navbar{
-    color: #849CA0 !important;
+    color: var(--quickorder-title-color) !important;
     font-family: museo_bold !important;
+}
+
+.summary-order .resources-title-navbar{
+    color: var(--quickorder-theme-color) !important;    
 }
 
 .resources-menu-icon{
@@ -424,7 +498,7 @@ ios .checkbox i, .ios .icon-checkbox {
 
 #resource-list .item-title{
     font-family: museo_bold !important;
-    color: #849CA0 !important;
+    color: var(--quickorder-secondary-color) !important;
     font-size: 19px !important;
 }
 
@@ -434,8 +508,12 @@ ios .checkbox i, .ios .icon-checkbox {
 
 #resource-list .item-text{
     font-family: museo_bold !important;
-    color: #849CA0 !important;
+    color: var(--quickorder-secondary-color) !important;
     font-size: 16px !important;
+}
+
+#resource-list .item-media img{
+    border-radius: 16px;
 }
 
 .resources-page .toolbar {
@@ -455,7 +533,10 @@ ios .checkbox i, .ios .icon-checkbox {
 }
 
 #resources-subnavbar, #form-search{
-    background: #fff !important;
+    background: var(--quickorder-product-ribon-background) !important;
+    width: 95%;
+    margin: 10px 12px 12px;
+    border-radius: 13px;
 }
 
 #what-titile{
@@ -488,7 +569,7 @@ ios .checkbox i, .ios .icon-checkbox {
 
 .resource-page .demo-card-header-pic .card-header{
     height: 248px !important;
-    color: #d2e1ae !important;
+    color: var(--quickorder-secondary-color) !important;
     font-size: 26px;
     padding-bottom: 40px;
     font-family: museo_bold;
@@ -500,20 +581,20 @@ ios .checkbox i, .ios .icon-checkbox {
 }
 
 .resource-page .card-footer{
-    background: #849CA0 !important;
-    color: #d2e1ae !important;
+    background: var(--quickorder-product-ribon-background) !important;
+    color: var(--quickorder-theme-color) !important;
     flex-direction: row-reverse;
 }
 
 .resource-page .block{
-    margin: 10px !important;
+    /* margin: 10px !important; */
 }
 
 .resource-page .block-title{
-    background: #849CA0 !important;
+    background: var(--quickorder-product-ribon-background) !important;
     margin: 0px !important;
     padding: 10px !important;
-    color: #d2e1ae !important;
+    color: var(--quickorder-theme-color) !important;
     text-transform: unset !important;
 }
 
@@ -521,6 +602,7 @@ ios .checkbox i, .ios .icon-checkbox {
     margin-top: 0px !important;
     margin-bottom: 0px !important;
     color: #849CA0 !important;
+    background-color: #fff;
 }
 
 .blue-ker {
@@ -532,9 +614,9 @@ ios .checkbox i, .ios .icon-checkbox {
 .resource-page .toolbar {
     height: 44px;
     font-size: 17px;
-    background: #d4e3b0 !important;
+    background: #fff !important;
     bottom: 0;
-    color: #849CA0 !important;
+    color: var(--quickorder-secondary-color) !important;
 }
 
 .resource-page .title-total{
@@ -611,7 +693,12 @@ ios .checkbox i, .ios .icon-checkbox {
 }
 /* End Settings Page */
 
-
+#faq-list .item-title{
+    color: var(--quickorder-theme-color) !important;
+}
+#faq-list .item-subtitle{
+    color: var(--quickorder-secondary-color) !important;
+}
 
 #floating-panel {
     position: absolute;
@@ -652,7 +739,6 @@ ios .checkbox i, .ios .icon-checkbox {
 .newaddress-popup .page{
     background-color: #fff !important;
 }
-
 /* End New Address */
 
 /* New Credit Card */
@@ -688,46 +774,55 @@ ios .checkbox i, .ios .icon-checkbox {
 
 .summary-order{
     text-align: center;
+    color: var(--quickorder-secondary-color) !important;
 }
 
 .order-page{
-    background-color: #fff !important;
-}
+    background-color: var(--quickorder-product-ribon-background) !important;
+} 
 
 .timeline-item-divider {
-    background: #d2e1ae !important;
+    background: var(--quickorder-title-color) !important;
 }
 
 .timeline-item-date {
     width: 130px !important;
+    color: var(--quickorder-secondary-color) !important;
 }
 
 #order-desc{
     font-family: museo_bold !important;
-    color: #849CA0 !important;
+    color: var(--quickorder-secondary-color) !important;
     line-height: 1;
 }
 
 #order-address{
     font-size: 18px;
-    color: #849CA0 !important;
+    color: var(--quickorder-title-color) !important;
+}
+
+.timeline-item-inner {
+    color: var(--quickorder-secondary-color) !important;
+}
+.md .timeline-item-inner {
+    border-radius: 13px !important;
 }
 
 #order-date{
     font-family: museo_light !important;
-    color: #849CA0 !important;
+    color: var(--quickorder-secondary-color) !important;
     line-height: 1;
 }
 
 #order-status{
     font-family: museo_light !important;
-    color: #849CA0 !important;
+    color: var(--quickorder-secondary-color) !important;
     line-height: 1;
 }
 
 #order-cost{
     font-family: museo_light !important;
-    color: #849CA0 !important;
+    color: var(--quickorder-theme-color) !important;
     line-height: 1;
 }
 
@@ -752,7 +847,7 @@ ios .checkbox i, .ios .icon-checkbox {
 }
 
 .assignedorder-page{
-    background-color: #fff !important;
+    background-color: var(--quickorder-product-ribon-background) !important;
 }
 
 .recommendedresources-page{
@@ -768,7 +863,7 @@ ios .checkbox i, .ios .icon-checkbox {
 }
 
 .resource-page{
-    background-color: #fff !important;
+    background-color: var(--quickorder-product-ribon-background) !important;
 }
 
 .main-title-navbar{
@@ -783,15 +878,19 @@ ios .checkbox i, .ios .icon-checkbox {
 
 #assigned-list .item-title{
     font-family: museo_bold !important;
-    color: #849CA0 !important;
+    color: var(--quickorder-secondary-color) !important;
 }
 
 #assigned-list .item-subtitle{
-    color: #849CA0 !important;
+    color: var(--quickorder-secondary-color) !important;
 }
 
 #assigned-list .item-text{
-    color: #849CA0 !important;
+    color: var(--quickorder-secondary-color) !important;
+}
+
+#assigned-list .item-media{
+    color: var(--quickorder-theme-color) !important;
 }
 
 .connect-title{
@@ -803,8 +902,12 @@ ios .checkbox i, .ios .icon-checkbox {
 
 #title-calendar{
     font-family: museo_bold !important;
-    color: #849CA0 !important;
+    color: var(--quickorder-secondary-color) !important;
     margin-top: 15px !important;
+}
+
+.calendar-day {
+    color: var(--quickorder-secondary-color) !important;
 }
 
 .summary-disconnect{
@@ -816,9 +919,20 @@ ios .checkbox i, .ios .icon-checkbox {
     margin-top: 0.30em;
     font-size: 1.53em;
     font-weight: bold;
-    color: #849CA0 !important;
+    color: var(--quickorder-secondary-color) !important;
 }
 
+#order-detail .item-title{
+    color: var(--quickorder-secondary-color);
+}
+
+#order-detail .item-text{
+    color: var(--quickorder-secondary-color);
+}
+
+#order-detail .item-media img{
+    border-radius: 13px;
+}
 
 .block-skill-container {
     margin-top: 10px;
@@ -858,17 +972,17 @@ ios .checkbox i, .ios .icon-checkbox {
 }
 
 #profits-list .item-title {
-    color: #849CA0 !important;
+    color: var(--quickorder-theme-color) !important;
     font-size: 17px !important;
 }
 #profits-list .item-after {
     font-family: museo_bold !important;
-    color: #849CA0 !important;
+    color: var(--quickorder-secondary-color) !important;
     font-size: 19px !important;
 }
 
 #profits-list .item-content {
-    color: #849CA0 !important;
+    color: var(--quickorder-secondary-color) !important;
 }
 
 #profits-list .item-text {
@@ -876,9 +990,19 @@ ios .checkbox i, .ios .icon-checkbox {
     color: #849CA0 !important;
     font-size: 16px !important;
 }
+#profits-list .item-link{
+    background-color: #fff;
+    border-radius: 13px;
+    width: 95%;
+}
+
+#profits-list li{
+    padding: 7px;
+}
+
 .line-separator {
     height: 1px;
-    border-bottom: 1px solid #d2e1ae;
+    border-bottom: 1px solid var(--quickorder-secondary-color);
     width: 48%;
     left: 25%;
     right: 40%;
@@ -902,21 +1026,29 @@ ios .checkbox i, .ios .icon-checkbox {
 }
 
 .rate-image-0 {
-    max-height: 120px;
+    /* max-height: 120px;
     max-width: 120px;
-    width: 110px;
+    width: 110px; */
     height: 110px;
     display: block;
     margin: auto;
     padding-top: 10px;
-    border-radius: 50%
+    /* border-radius: 50% */
 }
 .collaborator-profile-username {
     margin: auto;
     margin-top: 0.30em;
     font-size: 1.53em;
     font-weight: bold;
-    color: #849CA0 !important;
+    color: var(--quickorder-secondary-color) !important;
+}
+
+#profile-title{
+    color: var(--quickorder-secondary-color) !important;
+}
+
+.collaborator-profile-resume{
+    color: var(--quickorder-secondary-color) !important;
 }
 
 .collaborator-profile-resume {
@@ -925,19 +1057,19 @@ ios .checkbox i, .ios .icon-checkbox {
     margin-bottom: 1.10em;
 }
 .star-color {
-    color: #849CA0;
+    color: var(--quickorder-secondary-color) !important;
 }
 .block-skill-container {
     margin-top: 10px;
     margin-left: 15px;
     margin-bottom: 2px !important;
-    color: #849CA0 !important;
+    color: var(--quickorder-secondary-color) !important;
     font-family: museo_bold;
 }
 .chip-collaborator-profile {
     font-family: museo_bold;
-    background-color: #d2e1ae !important;
-    color: #849CA0 !important;
+    background-color: #fff !important;
+    color: var(--quickorder-secondary-color) !important;
 }
 .rate-padding-top {
     padding-top: 55px;
@@ -957,7 +1089,7 @@ ios .checkbox i, .ios .icon-checkbox {
 }
 
 .profile-page{
-    background-color: #fff !important;
+    background-color: #EFE7E6 !important;
 }
 
 .ios .toggle input[type=checkbox]:checked+.toggle-icon {
@@ -1008,28 +1140,28 @@ ios .checkbox i, .ios .icon-checkbox {
 .news-title {
     font-weight: bold;
     text-align: left;
-    color: #849CA0 !important;
+    color: var(--quickorder-theme-color) !important;
     font-family: museo_bold;
 }
 
 .news-desc {
     text-align: left;
-    color: #000000 !important;
+    color: var(--quickorder-secondary-color) !important;
 }
 .profitDetail-page .md .navbar ~ * .profitDetail-content, .md .navbar ~ .profitDetail-content {
     padding-top: 56px !important;
 }
 
 .profitDetail-page{
-    background-color: #fff !important;
+    background-color: var(--quickorder-product-ribon-background) !important;
 }
 
 .faq-page{
-    background-color: #fff !important;
+    background-color: var(--quickorder-product-ribon-background) !important;
 }
 
 .rate-page .page-content{
-    background-color: #fff !important;
+    background-color: var(--quickorder-product-ribon-background) !important;
 }
 
 .k-list-scroller {

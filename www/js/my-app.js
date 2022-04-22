@@ -4,7 +4,7 @@ let internalId;
 let canceling;
 let isCheckStatus = false;
 let collaboratorName = "";
-
+let tenantId = "528ec08e-4276-4e0f-8eb5-a7809ffeaab6";
 var app;
 
 var App7 = {
@@ -56,7 +56,8 @@ var App7 = {
 
                 var signinData = {
                     Email: value.user,
-                    Password: value.pwd
+                    Password: value.pwd,
+                    TenantId: tenantId
                 };
 
                 Util.signIn(signinData, function (status, msg, collaborator) {

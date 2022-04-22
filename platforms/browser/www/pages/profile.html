@@ -4,7 +4,7 @@
             <div class="navbar-inner sliding">
                 <div class="left">
                     <a href="#" class="link back">
-                        <img src="img/back-icon-blue.png" />
+                        <img src="img/back-green.svg" />
                     </a>
                 </div>
                 <div class="title resources-title-navbar">Perfil de usuario</div>
@@ -13,7 +13,7 @@
 
         <div class="page-content-profile">
             <div class="summary-order">
-                <img id="profile-image" class="rate-image-0" src="img/logo_profile.png" />
+                <img id="profile-image" class="rate-image-0" src="img/almaLogo.png" />
 
                 <div class="collaborator-profile-username" id="profile-name"></div>
                 <div id="profile-title"></div>
@@ -33,14 +33,14 @@
             <div class="line-separator"></div>
             <div class="block">
                 <div class="row">
-                    <div class="title text-align-center" style="padding-top:10px">
+                    <div class="title text-align-center" style="padding-top:10px;color: #935787;">
                         Salir de la aplicación
                     </div>
                 </div>
             </div>
             <div class="block">
                 <div class="row">
-                    <a class="button button-round button-fill white-ker col" @click="signout">Cerrar sesión</a>
+                    <a class="button button-round button-fill col" @click="signout">Cerrar sesión</a>
                 </div>
             </div>
         </div>
@@ -72,19 +72,20 @@
                 self.$app.dialog.preloader('Un momento por favor...');
 
                 app.request({
-                    url: Util.mapPath('/api/Collaborator?collaboratorId=' + internalId),
+                    url: Util.mapPath('/api/Collaborator?tenantId=' + tenantId + '&collaboratorId=' + internalId),
                     method: 'GET',
                     crossDomain: true,
                     contentType: 'application/json',
                     dataType: 'json',
                     processData: false,
                     success: function (data, status, xhr) {
+                        console.log(data);
                         $$("#profile-name").text(data.FullName);
                         $$("#profile-title").text(data.Title);
                         $$("#profile-summary").text(data.Resume);
 
 
-                        if (data.UrlImage != null) {
+                        if (data.UrlImage != null && data.UrlImage != "") {
                             $$("#profile-image").attr("src", data.UrlImage);
                         }
 

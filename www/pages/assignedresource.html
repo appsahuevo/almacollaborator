@@ -6,7 +6,7 @@
                     <a href="#" class="link back">
                         <!-- <i class="icon icon-back"></i>
               <span class="ios-only">Back</span> -->
-                        <img src="img/back-icon-blue.png" />
+                        <img src="img/back-green.svg" />
                     </a>
                 </div>
                 <div class="title resources-title-navbar"></div>
@@ -19,7 +19,7 @@
                     <span id="total-resource"></span>
                 </div>
 
-                <a class="button button-round button-fill blue-ker" @click="update" id="resource-update" style="display: none;">Actualizar</a>
+                <a class="button button-round button-fill" @click="update" id="resource-update" style="display: none;">Actualizar</a>
             </div>
         </div>
         <div class="page-content">
@@ -51,7 +51,7 @@
                 self.$app.dialog.preloader('Un momento por favor...');
 
                 app.request({
-                    url: Util.mapPath('/api/requestedresource?clientId=' + clientId + '&orderId=' + orderId + '&detailId=' + detailId),
+                    url: Util.mapPath('/api/requestedresource?tenantId=' + tenantId + '&clientId=' + clientId + '&orderId=' + orderId + '&detailId=' + detailId),
                     method: 'GET',
                     crossDomain: true,
                     contentType: 'application/json',

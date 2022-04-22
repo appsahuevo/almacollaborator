@@ -62,7 +62,8 @@
 
         var signinData = {
           Email: $('input#login-username').val(),
-          Password: $('input#login-password').val()
+          Password: $('input#login-password').val(),
+          TenantId: tenantId
         };
 
         Util.signIn(signinData, function (status, msg, collaborator) {

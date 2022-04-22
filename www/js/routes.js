@@ -16,7 +16,7 @@ var routes = [
         componentUrl: './pages/order.html',
     },
     {
-        path: '/assignedorder/:clientId/:orderId',
+        path: '/assignedorder/:clientId/:orderId/:internalClientId',
         componentUrl: './pages/assignedorder.html'       
     },
     {
@@ -36,7 +36,7 @@ var routes = [
         componentUrl: './pages/resource.html'      
     },
     {
-        path: '/clientprofile/:clientId',
+        path: '/clientprofile/:clientId/:internalClientId',
         componentUrl: './pages/clientprofile.html'
     },
     {
